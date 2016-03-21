@@ -3,13 +3,18 @@ img {
     height: auto;
 }
 
+body {
+    background-image: url(../img/tweed.png);
+    background-repeat: repeat;
+}
+
 .wrapper {
     position: relative;
     width: 960px;
     height: auto;
     left: 50%;
     margin-left: -480px;
-    background-color: antiquewhite;
+    background-color: #eee;
 }
 
 header {
@@ -18,19 +23,20 @@ header {
     height: auto;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #eee;
+    background-color: #043565;
 }
 
 header h1 {
     position: relative;
     text-align: center;
+    color: #fff;
 }
 
 nav {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #f00;
+    background-color: #7caeff;
 }
 
 nav form {
@@ -58,7 +64,7 @@ ul#content li {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #00f;
+    background-color: #ea2a49;
     padding-bottom: 30px;
     box-sizing: border-box;
 }
@@ -76,6 +82,7 @@ ul#content li span {
     /*    內文適用 line-height: 1.75em;*/
     box-sizing: border-box;
     text-align: center;
+    color: #fff;
 }
 
 ul#content li span.ProductNum {
@@ -107,7 +114,7 @@ div#more {
     margin-left: -300px;
     padding: 1px;
     box-sizing: border-box;
-    background-color: #eee;
+    background-color: #ffff5f;
 }
 
 div#more h3 {
@@ -121,7 +128,7 @@ footer {
     height: auto;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #0b132b;
 }
 
 footer p {
