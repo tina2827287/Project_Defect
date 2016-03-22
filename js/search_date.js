@@ -20,6 +20,7 @@ function getData(Y, M, D, StartId, dest, keyword, searchtype) {
 
             }
             $('.accro').append(response);
+            $('.accro').accordion('refresh');
 
             console.log(response); //在主控台印出整個JSON
         },
