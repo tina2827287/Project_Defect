@@ -4,7 +4,7 @@ img {
 }
 
 body {
-    background-image: url(../img/tweed.png);
+    background-image: url(../img/always_grey.png);
     background-repeat: repeat;
 }
 
@@ -14,7 +14,40 @@ body {
     height: auto;
     left: 50%;
     margin-left: -480px;
+    border: 0;
     background-color: #eee;
+    box-shadow: 0px 0px 50px 5px #000;
+}
+
+
+/* 如果使用者之視窗寬度 <= 960px 576px，將會再載入這裡的 CSS。*/
+
+@media screen and (min-width:576px) and (max-width: 960px) {
+    /*<960用%表示(和手機還沒有關係喔!)*/
+    .wrapper {
+        position: relative;
+        width: 90%;
+        height: auto;
+        left: 50%;
+        margin-left: -45%;
+        border: 0;
+        background-color: #eee;
+        box-shadow: 0px 0px 50px 5px #000;
+    }
+}
+
+@media screen and (max-width:576px) {
+    /*<960用%表示(和手機還沒有關係喔!)*/
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 50%;
+        margin-left: -50%;
+        border: 0;
+        background-color: #eee;
+        box-shadow: 0px 0px 50px 5px #000;
+    }
 }
 
 header {
@@ -23,26 +56,46 @@ header {
     height: auto;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #043565;
+    background-color: #3f88c5;
+    background-image: url(../img/bg3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-position: 15% 75%;
 }
 
 header h1 {
     position: relative;
     text-align: center;
     color: #fff;
+    font-family: 'Rokkitt', serif;
+    letter-spacing: 3px;
+    font-size: 3em;
 }
 
 nav {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #7caeff;
+    background-color: #003D79;
+    /*#ffff5f;*/
 }
 
 nav form {
+    display: flex;
     position: relative;
     width: 100%;
     height: auto;
+}
+
+@media screen and (max-width:576px) {
+    /*    手機會影響表單的各項大小跟著縮*/
+    nav form {
+        display: inline;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
 }
 
 nav form>div {
@@ -50,6 +103,18 @@ nav form>div {
     position: relative;
     width: 33%;
     height: 80px;
+    flex: 1;
+}
+
+@media screen and (max-width:576px) {
+    /*    手機會影響表單的各項大小跟著縮*/
+    nav form>div {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 80px;
+        flex: none;
+    }
 }
 
 ul#content {
@@ -64,8 +129,17 @@ ul#content li {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #ea2a49;
+    background-color: #99dbf2;
     padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+ul#content li h3 {
+    display: flex;
+    margin: 0;
+    outline: none;
+    /*    選取時的外框*/
+    padding: 0.5em 0;
     box-sizing: border-box;
 }
 
@@ -85,16 +159,55 @@ ul#content li span {
     color: #fff;
 }
 
+@media screen and (min-width:576px) and (max-width: 960px) {
+    /*<960用%表示(和手機還沒有關係喔!)*/
+    ul#content li span {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        /* 指的是跟內部的一樣大而不是外面的(因為是inline) */
+        font-size: 1.1em;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        padding-top: 0.4em;
+        /*        padding: 變成1.1*0.4去做*/
+        /*    內文適用 line-height: 1.75em;*/
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width:576px) {
+    ul#content li span {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        /* 指的是跟內部的一樣大而不是外面的(因為是inline) */
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        padding-top: 0.4em;
+        /*        padding: 變成1.1*0.4去做*/
+        /*    內文適用 line-height: 1.75em;*/
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+    }
+}
+
 ul#content li span.ProductNum {
-    width: 47.5%;
+    flex: 1;
 }
 
 ul#content li span.Date {
-    width: 35%;
+    flex: 1;
 }
 
 ul#content li span.Def-Icon {
-    width: 14%;
+    flex: 1;
 }
 
 ul#content li>div {
@@ -106,15 +219,26 @@ ul#content li>div {
     margin-left: -400px;
 }
 
+@media screen and (max-width: 960px) {
+    ul#content li>div {
+        position: relative;
+        width: 90%;
+        height: auto;
+        background-color: #eee;
+        left: 50%;
+        margin-left: -45%;
+    }
+}
+
 div#more {
     position: relative;
-    width: 600px;
+    width: 90%;
     height: 60px;
     left: 50%;
-    margin-left: -300px;
+    margin-left: -45%;
     padding: 1px;
     box-sizing: border-box;
-    background-color: #ffff5f;
+    background-color: #9d9d9d;
 }
 
 div#more h3 {
@@ -134,4 +258,10 @@ footer {
 footer p {
     position: relative;
     text-align: center;
+    color: #eee;
 }
+
+
+/*程式碼media query寫在各個得下面
+做兩次
+*/
