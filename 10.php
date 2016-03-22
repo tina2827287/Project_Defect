@@ -3,16 +3,14 @@ $link = mysqli_connect('localhost','root','','product');
 if (!$link) { 
 	die('Could not connect to MySQL: ' . mysql_error()); 
 }   
-
-
-					$y=$_POST["Year"];$m=$_POST["Month"];$d=$_POST["Day"];
-					$StartId=$_POST["StartId"];
-					if($m<10)
-						$m='0'.$m;
-					if($d<10)
-						$d='0'.$d;
-					$Today_date=$y.'-'.$m.'-'.$d;  // Today's Date
-					echo $Today_date."  ²£«~¸ê®Æ";
+        $y=$_POST["Year"];$m=$_POST["Month"];$d=$_POST["Day"];
+        $StartId=$_POST["StartId"];
+        if($m<10)
+            $m='0'.$m;
+        if($d<10)
+            $d='0'.$d;
+        $Today_date=$y.'-'.$m.'-'.$d;  // Today's Date
+        echo $Today_date."  ç”¢å“è³‡æ–™";
 
 
 		mysqli_query($link, 'SET CHARACTER SET utf8');
@@ -33,8 +31,23 @@ if (!$link) {
 				echo "<td>".$pDef[i]."</td>";
 				
 			} 
-			mysqli_free_result($result); // ÄÀ©ñ¦û¥Îªº°O¾ÐÅé 
+			mysqli_free_result($result); // é‡‹æ”¾ä½”ç”¨çš„è¨˜æ†¶é«” 
 		} 
 
 			
 ?>
+
+
+
+
+    <h3>
+                    <span class="ProductNum">00000000</span>
+                    <span class="Date">2016-03-18</span>
+                    <span class="Def-Icon">icon</span>
+                </h3>
+    <div>
+        <a href="./img/1.bmp" target="_blank">
+            <img src="./img/1.bmp" alt=""></a>
+    </div>
+
+    <!--               åœ–ç‰‡ä½ç½®åœ–ç‰‡ä½ç½®-->
