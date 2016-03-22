@@ -24,18 +24,32 @@ mysqli_query($link, 'SET CHARACTER SET utf8');
                     $pDate=$row["MFDate"];
                     $pDef=$row["Defect"];
                 
-
- $return = "<h3>
+if($pDef=='Y')
+{
+     $return = "<h3>
                             <span class=\"ProductNum\">".$pid."</span>
                             <span class=\"Date\">".$pDate."</span>
-                            <span class=\"Def-Icon\">".$pDef."</span>
+                            <span class=\"Def-Icon\"><i class=\"fa fa-check-circle-o\"></i></span>
                         </h3>".
                         "<div>
                         <a href=\"./img/".$pid.".bmp\" target=\"_blank\">
                         <img src=\"./img/".$pid.".bmp\" alt=\"\"></a>
                         </div>";
-                echo $return;
-                
+                echo $return;    
+}
+if($pDef=='N')
+{
+     $return = "<h3>
+                            <span class=\"ProductNum\">".$pid."</span>
+                            <span class=\"Date\">".$pDate."</span>
+                            <span class=\"Def-Icon\"><i class=\"fa fa-times-circle-o\"></i></span>
+                        </h3>".
+                        "<div>
+                        <a href=\"./img/".$pid.".bmp\" target=\"_blank\">
+                        <img src=\"./img/".$pid.".bmp\" alt=\"\"></a>
+                        </div>";
+                echo $return;    
+}
                    
              }  
             //$i=0;
