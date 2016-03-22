@@ -1,14 +1,15 @@
 <?php
-	if ($result= mysqli_query($link, "SELECT ProductNum,MFDate,Defect FROM productinfo WHERE ProductNum='$Pn'") ) 
+	if ($result= mysqli_query($link, "SELECT Pnum,MFDate,Defect FROM productinfo WHERE Pnum='$KeyWord'") ) 
 	{ 
 
-			$Pnid=$row["ProductNum"];
-			$PnDate=$row["MFDate"];
-			$PnDef=$row["Defect"];
-				
-			echo "<tr><td>".$Pnid."</td>";
-			echo "<td>".$PnDate."</td>";
-			echo "<td>".$PnDef."</td>";
+		while($row = mysqli_fetch_array($result))
+           	 { 
+
+                    $pid=$row["Pnum"];
+                    $pDate=$row["MFDate"];
+                    $pDef=$row["Defect"];
+		}
+
 			
 			mysqli_free_result($result); // 釋放佔用的記憶體 
 	}

@@ -8,7 +8,8 @@ function getData(Y, M, D, StartId, dest, keyword, searchtype) {
             'Month': M,
             'Day': D,
             'keyword': keyword,
-            'StartId': StartId
+            'StartId': StartId,
+            'searchtype': searchtype
         },
         type: "POST",
         dataType: 'html',

@@ -1,6 +1,21 @@
 var globalStartID = 0;
 
 $(document).ready(function () {
+
+    /*    $(window).scroll(function () {
+
+            if ($(this).scrollTop() > 410) {
+
+                $("#top-bar").show();
+
+            } else {
+                $("#top-bar").remove();
+            }
+
+        });
+    */
+
+
     $('.accro').accordion({
         collapsible: true,
         active: false

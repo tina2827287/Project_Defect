@@ -6,15 +6,17 @@ if (!$link) {
         $y=$_POST["Year"];$m=$_POST["Month"];$d=$_POST["Day"];
         $KeyWord=$_POST["keyword"];
         $StartId=$_POST["StartId"];
+$searchtype=$_POST["searchtype"];
         $Today_date=$y.'-'.$m.'-'.$d;  // Today's Date
 
 
- $i=0;
 mysqli_query($link, 'SET CHARACTER SET utf8');
-		mysqli_query($link,"SET collation_connection = 'utf8_unicode_ci'");
+mysqli_query($link,"SET collation_connection = 'utf8_unicode_ci'");
 	
-
-		if ( $result = mysqli_query($link, "SELECT Pnum,MFDate,Defect FROM productinfo WHERE MFDate='$Today_date' limit $StartId,10") ) 
+if($searchtype=='default')
+{
+ 
+    if ( $result = mysqli_query($link, "SELECT Pnum,MFDate,Defect FROM productinfo WHERE MFDate='$Today_date' limit $StartId,10") ) 
 		{ 
             
             while($row = mysqli_fetch_array($result))
@@ -57,6 +59,12 @@ if($pDef=='N')
 			mysqli_free_result($result); // 釋放佔用的記憶體 
 		} 
 
+    
+    
+    
+    
+}
+		
 
 
 
