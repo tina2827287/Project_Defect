@@ -1,14 +1,15 @@
 var globalStartID = 0;
+var number = $('input[name="number"]');
 
 $(document).ready(function () {
 
-
     $('.accro').accordion({
         collapsible: true,
-        active: false
+        active: false,
+        animate: 200
     });
 
-
+    ////////////////
     $('#more').click(function () {
 
         var Y = $('#Year').val();
@@ -16,42 +17,41 @@ $(document).ready(function () {
         var D = $('#Day').val();
 
         var StartID = globalStartID;
-        var EndID = $('#EndID').hide();
-        var searchTp = 'default';
+        var EndID = $('#EndID').val();
         var dest = 'search_date.php';
 
-        getData(Y, M, D, StartID, dest, '', searchTp);
+        getData(Y, M, D, StartID, dest, '', 'default');
         globalStartID += 10;
 
         if (EndID < globalStartID && EndID != 0) {
             //            <&!=0 more diseapear
-            $('#more').hide();
+            $('#more').fadeOut();
         }
     });
+    //////////////////////
 
-    /////輸入框sumbit
+    $('#submit').submit(function () {
+        var num = $('input[name="num"]');
+        console.log(num);
+        var datanum = num.val(); //這行抓到22
+        console.log(datanum);
 
-    $("#num").keypress {
+        var Y = $('#Year').val();
+        var M = $('#Month').val();
+        var D = $('#Day').val();
 
-        code = (e.keyCode ? e.keyCode : e.which);
-        if (code == 13) {
-            $("searchform").submit();
-            var N = $('input[name="num"]').val();
+        var StartID = globalStartID;
+        var EndID = $('#EndID').val();
+        var dest = 'search_num.php';
 
-            var dest = 'search_num.php';
-            getData(Y, M, D, StartID, dest, N, '');
-
-            if (EndID < globalStartID && EndID != 0) {
-                //            <&!=0 more diseapear
-                $('#more').hide();
-            }
-        }
+        getData(Y, M, D, StartID, dest, datanum, 'keyword');
 
 
+        return false;
     });
 
 
 
 
-
+    /////////////////////
 });

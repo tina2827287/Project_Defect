@@ -1,5 +1,7 @@
 function getData(Y, M, D, StartId, dest, keyword, searchtype) {
 
+    console.log(Y + M + D + StartId + dest + keyword + searchtype);
+
     $.ajax({
         url: dest,
         data: {
@@ -14,8 +16,7 @@ function getData(Y, M, D, StartId, dest, keyword, searchtype) {
 
         success: function (response) {
             if (searchtype == 'date' || searchtype == 'keyword') {
-                $('.accro').remove();
-
+                $('#more').remove();
             }
             $('#endID').remove();
             $('.accro').append(response);

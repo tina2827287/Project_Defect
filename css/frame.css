@@ -265,6 +265,11 @@ div#more h3 {
     text-align: center;
 }
 
+div#Radio input {
+    text-align: center;
+    color: #fff;
+}
+
 footer {
     position: relative;
     width: 100%;
