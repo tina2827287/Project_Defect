@@ -9,12 +9,13 @@ $(document).ready(function () {
         animate: 200
     });
 
+
+    $('#date').datepicker();
+
     ////////已在查詢 按more看更多////////
     $('#more').click(function () {
 
-        var Y = $('#Year').val();
-        var M = $('#Month').val();
-        var D = $('#Day').val();
+        var Date = $('#date');
         var chooseStatus = $('input:radio:checked[name="R"]').val();
 
         console.log(chooseStatus);
@@ -22,7 +23,7 @@ $(document).ready(function () {
         var EndID = $('#EndID').val();
         var dest = 'search_date.php';
 
-        getData(Y, M, D, StartID, dest, chooseStatus, '', 'default');
+        getData(Date, StartID, dest, chooseStatus, '', 'default');
         globalStartID += 10;
 
         if (EndID == 1) {

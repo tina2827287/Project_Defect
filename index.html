@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/pure-min.css">
     <link rel="stylesheet" href="./css/frame.css">
     <link rel="stylesheet" href="./css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/jquery-ui-1.11.4.custom/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
 </head>
 
@@ -18,62 +19,14 @@
     <nav id="#top-bar">
         <form id="submit" action="">
             <div>
-                <select name="" id="Year">
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                </select>
-                <select name="" id="Month">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-                <select name="" id="Day">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                </select>
+                <input type="text" id="date">
             </div>
             <div>
-                <input type="radio" name="R" value="all" checked>所有產品
-                <input type="radio" name="R" value="well">良品
-                <input type="radio" name="R" value="defect">劣品
+                <label for="switch">
+                    <div id="sw-div">
+                    </div>
+                </label>
+                <input type="checkbox" id="switch">
             </div>
             <div>
                 <input name="num" id="num" type="text">
@@ -82,26 +35,38 @@
     </nav>
     <div class="wrapper">
         <ul id="content">
+            <p>Defect searching results for 2016/03/24</p>
             <li id="content-head">
-                <span>Serial Number</span>
-                <span>Date</span>
+                <span>編號</span>
+                <span>日期</span>
                 <span>Status</span>
             </li>
             <li class="accro">
 
                 <h3>
-                    <span class="ProductNum">00000000</span>
+                    <span class="ProductNum">1</span>
                     <span class="Date">2016-03-18</span>
-                    <span class="Def-Icon"><i class="fa fa-check-circle-o"></i></span>
+                    <span class="Def-Icon Well"><i class="fa fa-check-circle-o"></i></span>
+                </h3>
+                <div>
+                    <a href="./img/1/1_0.bmp" target="_blank">
+                        <img src="./img/1/1_0.bmp" alt=""></a>
+                </div>
+
+                <h3>
+                    <span class="ProductNum">2</span>
+                    <span class="Date">2016-03-18</span>
+                    <span class="Def-Icon Defect"><i class="fa fa-times-circle-o"></i></span>
                 </h3>
                 <div>
                     <a href="./img/1.bmp" target="_blank">
                         <img src="./img/1.bmp" alt=""></a>
                 </div>
-                <input type="hidden" id="#EndID" value="0">
+
+                <input type="hidden" id="EndID" value="0">
             </li>
             <div id="more">
-                <h3>Search</h3></div>
+                <h3>more</h3></div>
         </ul>
         <footer>
             <p>Copyright</p>

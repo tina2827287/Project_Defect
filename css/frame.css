@@ -54,8 +54,7 @@ header {
     background-image: url(../img/bg3.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
-    background-position: 15% 75%;
+    background-size: cover;
 }
 
 header h1 {
@@ -112,11 +111,53 @@ nav form>div {
     }
 }
 
+label {
+    position: relative;
+}
+
+input[type="checkbox"]+label div #sw-div {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked +label div #sw-div {
+    background-color: #fff;
+}
+
 ul#content {
     position: relative;
     width: 100%;
     height: auto;
     padding: 0;
+}
+
+ul#content > p {
+    padding: 5px 15px;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #fc2;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 576px) {
+    ul#content > p {
+        position: relative;
+        width: 90%;
+        left: 50%;
+        margin-left: -45%;
+        padding: 5px 15px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 1em;
+        color: #225588;
+        background-color: #fc2;
+        border-radius: 5px;
+    }
 }
 
 ul#content li {
@@ -229,6 +270,19 @@ ul#content li span.Def-Icon {
     color: #fff;
 }
 
+ul#content li span.Def-Icon.Defect {
+    color: #f00;
+}
+
+ul#content li span.Def-Icon.Well {
+    flex: 1;
+    color: #0ff;
+}
+
+ul#content li span.Def-Icon i {
+    margin-right: 5px;
+}
+
 ul#content li>div {
     position: relative;
     width: 800px;
@@ -257,7 +311,7 @@ div#more {
     margin-left: -45%;
     padding: 1px;
     box-sizing: border-box;
-    background-color: #9d9d9d;
+    background-color: #eee;
 }
 
 div#more h3 {

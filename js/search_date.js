@@ -1,4 +1,4 @@
-function getData(Y, M, D, StartId, dest, chooseStaus, keyword, searchtype) {
+function getData(Date, StartId, dest, chooseStaus, keyword, searchtype) {
 
     console.log(Y + M + D + StartId + dest + chooseStaus + keyword + searchtype);
 
@@ -6,7 +6,7 @@ function getData(Y, M, D, StartId, dest, chooseStaus, keyword, searchtype) {
         url: dest,
         data: {
 
-            'Date': Y + '-' + M + '-' + D,
+            'Date': Date,
             'keyword': keyword,
             'StartId': StartId,
             'chooseStaus': chooseStaus
@@ -19,7 +19,7 @@ function getData(Y, M, D, StartId, dest, chooseStaus, keyword, searchtype) {
             if (searchtype == 'date' || searchtype == 'keyword') {
                 $('#more').remove();
             }
-            $('#endID').remove();
+            $('input[type="hidden"]').remove();
             $('.accro').append(response);
             $('.accro').accordion('refresh');
 

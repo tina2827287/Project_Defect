@@ -27,11 +27,11 @@
             do {
 					if($row["pState"])
 					{
-						$icon = "defect\"><i class=\"fa fa-times-circle-o\"></i>Defect";
+						$icon = "Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect";
 					} 
 					else 
 					{
-						$icon = "ok\"><i class=\"fa fa-check-circle-o\"></i>OK";
+						$icon = "Well\"><i class=\"fa fa-check-circle-o\"></i>OK";
 					}
 					echo "<h3>
 								<span class=\"ProductNum\">".$row["pNum"]."</span>
@@ -40,7 +40,7 @@
 								</h3>
 								<div>
 								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
-								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\"></a>
+								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\">
 								</a>
 								</div>";
 					//每輸出一項結果endID遞增
@@ -48,7 +48,7 @@
             }
 			while($row = mysqli_fetch_array($result, MYSQLI_ASSOC));
 				//{$endID}可以直接把整數轉成字串
-				echo "<input type=\"hidden\" id=\"endID\" value=\"{$endID}\">";
+				echo "<input type=\"hidden\" id=\"EndID\" value=\"{$endID}\">";
         }
         mysqli_free_result($result);
     }
