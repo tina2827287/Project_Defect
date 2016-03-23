@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./css/pure-min.css">
     <link rel="stylesheet" href="./css/frame.css">
     <link rel="stylesheet" href="./css/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/jquery-ui-1.11.4.custom/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/datepicker.css">
 </head>
 
 <body>
@@ -19,16 +19,19 @@
     <nav id="#top-bar">
         <form id="submit" action="">
             <div>
-                <input type="text" id="date">
+                <input name="date" type="text" id="date">
+            </div>
+            <div>All
+                <div id="sw-frame">
+                    <input type="checkbox" id="switch">
+                    <label for="switch">
+                        <div id="sw-div">
+                        </div>
+                    </label>
+                </div>Defect
             </div>
             <div>
-                <label for="switch">
-                    <div id="sw-div">
-                    </div>
-                </label>
-                <input type="checkbox" id="switch">
-            </div>
-            <div>
+                <i class="fa fa-search"></i>
                 <input name="num" id="num" type="text">
             </div>
         </form>

@@ -3,6 +3,10 @@ var number = $('input[name="number"]');
 
 $(document).ready(function () {
 
+
+    /////Default Action 日期要取//////
+
+
     $('.accro').accordion({
         collapsible: true,
         active: false,
@@ -10,7 +14,11 @@ $(document).ready(function () {
     });
 
 
-    $('#date').datepicker();
+    $('#date').datepicker({
+        dateFormat: 'yy-mm-dd',
+        showAnim: 'slideDown'
+
+    });
 
     ////////已在查詢 按more看更多////////
     $('#more').click(function () {
@@ -38,26 +46,21 @@ $(document).ready(function () {
     $('#submit').submit(function () {
 
         var num = $('input[name="num"]');
-        console.log(num);
+        var date = $('input[name="date"]').val();
         var datanum = num.val(); //這行抓到22
-        console.log(datanum);
+
 
 
         /////用編號 或是 用日期+choose    
         if (datanum) {
-            var Y = $('#Year').val();
-            var M = $('#Month').val();
-            var D = $('#Day').val();
 
             var StartID = globalStartID;
             var EndID = $('#EndID').val();
             var dest = 'search_num.php';
 
-            getData(Y, M, D, StartID, dest, chooseStaus, datanum, 'keyword');
+            getData(date, StartID, dest, chooseStaus, datanum, 'keyword');
         } else {
-            var Y = $('#Year').val();
-            var M = $('#Month').val();
-            var D = $('#Day').val();
+
             var chooseStaus = $('input:radio:checked[name="R"]').val();
 
             console.log(chooseStaus);
@@ -65,7 +68,7 @@ $(document).ready(function () {
             var EndID = $('#EndID').val();
             var dest = 'search_date.php';
 
-            getData(Y, M, D, StartID, dest, chooseStaus, '', 'date');
+            getData(date, StartID, dest, chooseStaus, '', 'date');
             globalStartID += 10;
             if (EndID < globalStartID && EndID != 0) {
                 //            <&!=0 more diseapear
