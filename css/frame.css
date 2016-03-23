@@ -8,6 +8,13 @@ body {
     background-repeat: repeat;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    box-shadow: none;
+    -webkit-text-fill-color: transparent;
+}
+
 .wrapper {
     position: relative;
     width: 960px;
@@ -156,6 +163,7 @@ input[type="checkbox"]:checked +label div#sw-div {
 
 #num {
     padding-left: 1.7em;
+    text-align: right;
 }
 
 ul#content {

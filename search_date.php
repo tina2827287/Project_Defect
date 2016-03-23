@@ -22,19 +22,25 @@
 	}
 	*/
 $query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
+$query_num = "SELECT COUNT(*) FROM productinfo WHERE date(pDate)='$date'";
+
+
 	$result = mysqli_query($link, $query);
 
-	if (!$result){
+    $result_num = mysqli_query($link, $query_num);
+    $rowcount=mysqli_num_rows($result_num);
+
+if (!$result){
 			//查詢失敗的錯誤處理	
       trigger_error('query failed', E_USER_ERROR);
+        trigger_error('query_num failed', E_USER_ERROR);
     }
 	else 
 	{
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if ( !$row ) {
 						//資料庫為空的輸出處理
-            echo '<p>尚無資料</p>';
-            
+          //  echo '<p>尚無資料</p>';
         }
         else {
 				
@@ -65,6 +71,7 @@ $query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10"
 			while($row = mysqli_fetch_array($result, MYSQLI_ASSOC));
             
              $endID+=$startID;
+            
 				//{$endID}可以直接把整數轉成字串
 				echo "<input type=\"hidden\" id=\"endID\" value=\"{$endID}\">";
         }

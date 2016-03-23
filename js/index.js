@@ -50,9 +50,9 @@ $(document).ready(function () {
             /*      $('input:checkbox:checked[name="sw_def"]').click(function () {
                 chooseStaus = 'defect';
             });
-*/
+            */
             getData(getdate, StartID, dest, chooseStaus, '', 'date');
-
+            globalStartID += 10;
         }
     });
     ////////已在查詢 按more看更多////////
@@ -77,19 +77,15 @@ $(document).ready(function () {
 
     $('#submit').submit(function () {
 
-        var num = $('input[name="num"]');
-        var date = $('input[name="date"]').val();
-        var datanum = num.val(); //這行抓到22
+        var num = $('input[name="num"]').val();
+        console.log(datanum);
         /////用編號 或是 用日期+choose    
         if (datanum) {
-
             var StartID = globalStartID;
             var EndID = $('#EndID').val();
             var dest = 'search_num.php';
 
-            getData(date, StartID, dest, chooseStaus, datanum, 'keyword');
-        } else {
-            alert(請輸入產品號);
+            getData(getdate, StartID, dest, chooseStaus, datanum, 'keyword');
         }
 
         return false;
