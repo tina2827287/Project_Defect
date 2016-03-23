@@ -3,12 +3,11 @@
 	include("./mysql_connect.php");
 	
 	//取得各ajax欄位資料
-    $startID = $_POST["StartId"];
 	$date = $_POST["Date"];
-
+	$startID = $_POST["startID"];
 	
-	//設定查詢語句與查詢-查詢日期
-	$query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
+	//設定查詢語句與查詢
+	$query = "SELECT * FROM product WHERE date(p_date)='$date'";
 	$result = mysqli_query($link, $query);
 
 	if (!$result){
@@ -26,22 +25,19 @@
 				//設定endID
 					$endID = 0;
             do {
-					if($row["pState"])
-					{
+					if($row["p_status"]){
 						$icon = "defect\"><i class=\"fa fa-times-circle-o\"></i>Defect";
-					} 
-					else 
-					{
+					} else {
 						$icon = "ok\"><i class=\"fa fa-check-circle-o\"></i>OK";
 					}
 					echo "<h3>
-								<span class=\"ProductNum\">".$row["pNum"]."</span>
-								<span class=\"Date\">".substr($row["pDate"] ,0 ,10)."</span>
+								<span class=\"ProductNum\">".$row["p_num"]."</span>
+								<span class=\"Date\">".substr($row["p_date"] ,0 ,10)."</span>
 								<span class=\"Def-Icon ".$icon."</span>
 								</h3>
 								<div>
-								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
-								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\"></a>
+								<a href=\"".$row["p_pic"]."\" target=\"_blank\">
+								<img src=\"".$row["p_pic"]."\" alt=\"\">
 								</a>
 								</div>";
 					//每輸出一項結果endID遞增

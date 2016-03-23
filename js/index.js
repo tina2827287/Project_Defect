@@ -2,19 +2,6 @@ var globalStartID = 0;
 
 $(document).ready(function () {
 
-    /*    $(window).scroll(function () {
-
-            if ($(this).scrollTop() > 410) {
-
-                $("#top-bar").show();
-
-            } else {
-                $("#top-bar").remove();
-            }
-
-        });
-    */
-
 
     $('.accro').accordion({
         collapsible: true,
@@ -30,9 +17,10 @@ $(document).ready(function () {
 
         var StartID = globalStartID;
         var EndID = $('#EndID').hide();
+        var searchTp = 'default';
         var dest = 'search_date.php';
 
-        getData(Y, M, D, StartID, dest, '', 'default');
+        getData(Y, M, D, StartID, dest, '', searchTp);
         globalStartID += 10;
 
         if (EndID < globalStartID && EndID != 0) {
@@ -40,5 +28,30 @@ $(document).ready(function () {
             $('#more').hide();
         }
     });
+
+    /////輸入框sumbit
+
+    $("#num").keypress {
+
+        code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+            $("searchform").submit();
+            var N = $('input[name="num"]').val();
+
+            var dest = 'search_num.php';
+            getData(Y, M, D, StartID, dest, N, '');
+
+            if (EndID < globalStartID && EndID != 0) {
+                //            <&!=0 more diseapear
+                $('#more').hide();
+            }
+        }
+
+
+    });
+
+
+
+
 
 });

@@ -16,7 +16,7 @@
         <h1>Defect Search</h1>
     </header>
     <nav id="#top-bar">
-        <form action="">
+        <form action="" id="searchform">
             <div>
                 <select name="" id="Year">
                     <option value="2015">2015</option>
@@ -71,12 +71,12 @@
                 </select>
             </div>
             <div>
-                <input type="radio">所有產品
-                <input type="radio">良品
-                <input type="radio">劣品
+                <input type="radio" name="R">所有產品
+                <input type="radio" name="R">良品
+                <input type="radio" name="R">劣品
             </div>
             <div>
-                <input type="text">
+                <input type="text" name="num" id="num">
             </div>
         </form>
     </nav>
@@ -98,12 +98,10 @@
                     <a href="./img/1.bmp" target="_blank">
                         <img src="./img/1.bmp" alt=""></a>
                 </div>
-
-
                 <input type="hidden" id="#EndID" value="0">
             </li>
             <div id="more">
-                <h3>more</h3></div>
+                <h3>Search</h3></div>
         </ul>
         <footer>
             <p>Copyright</p>

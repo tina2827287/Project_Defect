@@ -3,12 +3,11 @@
 	include("./mysql_connect.php");
 	
 	//取得各ajax欄位資料
-    $startID = $_POST["StartId"];
-	$date = $_POST["Date"];
+	$num= $_POST["keyword"];
 
 	
 	//設定查詢語句與查詢-查詢日期
-	$query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
+	$query = "SELECT * FROM productinfo WHERE pNum=$num ";
 	$result = mysqli_query($link, $query);
 
 	if (!$result){
@@ -20,7 +19,7 @@
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if ( !$row ) {
 						//資料庫為空的輸出處理
-            echo '<p>尚無資料</p>';
+            echo '<p>無此產品</p>';
         }
         else {
 				//設定endID

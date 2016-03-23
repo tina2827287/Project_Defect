@@ -4,12 +4,9 @@ function getData(Y, M, D, StartId, dest, keyword, searchtype) {
         url: dest,
         data: {
 
-            'Year': Y,
-            'Month': M,
-            'Day': D,
+            'Date': Y + '-' + M + '-' + D,
             'keyword': keyword,
             'StartId': StartId,
-            'searchtype': searchtype
         },
         type: "POST",
         dataType: 'html',
@@ -20,6 +17,7 @@ function getData(Y, M, D, StartId, dest, keyword, searchtype) {
                 $('.accro').remove();
 
             }
+            $('#endID').remove();
             $('.accro').append(response);
             $('.accro').accordion('refresh');
 
