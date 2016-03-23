@@ -1,6 +1,6 @@
-function getData(Y, M, D, StartId, dest, keyword, searchtype) {
+function getData(Y, M, D, StartId, dest, chooseStaus, keyword, searchtype) {
 
-    console.log(Y + M + D + StartId + dest + keyword + searchtype);
+    console.log(Y + M + D + StartId + dest + chooseStaus + keyword + searchtype);
 
     $.ajax({
         url: dest,
@@ -9,6 +9,7 @@ function getData(Y, M, D, StartId, dest, keyword, searchtype) {
             'Date': Y + '-' + M + '-' + D,
             'keyword': keyword,
             'StartId': StartId,
+            'chooseStaus': chooseStaus
         },
         type: "POST",
         dataType: 'html',
