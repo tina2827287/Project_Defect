@@ -1,8 +1,8 @@
 <?php
 	$user = 'root';
-	$password = '';
+	$password = 'root';
 	$db = 'product';
-	$host = '127.0.0.1';
+	$host = 'localhost';
 
 	$link = mysqli_init();
 if ( !mysqli_real_connect($link, $host, $user, $password, $db) ) {

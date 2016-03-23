@@ -7,14 +7,10 @@
 	$date = $_POST["Date"];
 	$chooseStaus=$_POST["chooseStaus"];
 //echo "ChooseStaus=".$chooseStaus."</br>";
-	$endID = 0;
+	$endID =0;
 	//設定查詢語句與查詢-查詢日期
-	if($chooseStaus=='well')
-	{
-      //  echo "Well Choosed</br>";
-		$query = "SELECT * FROM productinfo WHERE (date(pDate)='$date' AND pState=0) LIMIT $startID,10";
-	}
-	else if($chooseStaus=='defect'){
+
+	/*if($chooseStaus=='defect'){
         
       //  echo "Def Choosed</br>";
 		$query = "SELECT * FROM productinfo WHERE (date(pDate)='$date' AND pState=1) LIMIT $startID,10";
@@ -24,7 +20,8 @@
       //  echo "All Choosed</br>";
 		$query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
 	}
-	
+	*/
+$query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
 	$result = mysqli_query($link, $query);
 
 	if (!$result){
@@ -37,18 +34,18 @@
         if ( !$row ) {
 						//資料庫為空的輸出處理
             echo '<p>尚無資料</p>';
+            
         }
         else {
-				//設定endID
-					
+				
             do {
 					if($row["pState"])
 					{
-						$icon = "Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect";
+						$icon = "Defect\"><i class=\"fa fa-times-circle-o\"></i>";
 					} 
 					else 
 					{
-						$icon = "Well\"><i class=\"fa fa-check-circle-o\"></i>OK";
+						$icon = "Well\"><i class=\"fa fa-check-circle-o\"></i>";
 					}
 					echo "
                     <h3>
@@ -62,12 +59,14 @@
 								</a>
 								</div>";
 					//每輸出一項結果endID遞增
+                $endID++;
 					
             }
 			while($row = mysqli_fetch_array($result, MYSQLI_ASSOC));
-            $endID=1;
+            
+             $endID+=$startID;
 				//{$endID}可以直接把整數轉成字串
-				echo "<input type=\"hidden\" id=\"EndID\" value=\"{$endID}\">";
+				echo "<input type=\"hidden\" id=\"endID\" value=\"{$endID}\">";
         }
         mysqli_free_result($result);
     }

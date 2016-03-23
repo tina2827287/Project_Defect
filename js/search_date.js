@@ -1,6 +1,6 @@
 function getData(Date, StartId, dest, chooseStaus, keyword, searchtype) {
 
-    console.log(Y + M + D + StartId + dest + chooseStaus + keyword + searchtype);
+    console.log(Date + StartId + dest + chooseStaus + keyword + searchtype);
 
     $.ajax({
         url: dest,
@@ -16,7 +16,7 @@ function getData(Date, StartId, dest, chooseStaus, keyword, searchtype) {
 
 
         success: function (response) {
-            if (searchtype == 'date' || searchtype == 'keyword') {
+            if (searchtype == 'keyword') {
                 $('#more').remove();
             }
             $('input[type="hidden"]').remove();

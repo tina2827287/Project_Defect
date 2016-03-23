@@ -170,7 +170,7 @@ ul#content > p {
     box-sizing: border-box;
     text-align: right;
     font-size: 1.2em;
-    color: #fff;
+    color: #258;
     background-color: #fc2;
     border-radius: 5px;
 }
@@ -309,7 +309,7 @@ ul#content li span.Def-Icon.Defect {
 
 ul#content li span.Def-Icon.Well {
     flex: 1;
-    color: #0ff;
+    color: #eee;
 }
 
 ul#content li span.Def-Icon i {
@@ -350,6 +350,7 @@ div#more {
 div#more h3 {
     position: relative;
     text-align: center;
+    cursor: pointer;
 }
 
 div#Radio input {
