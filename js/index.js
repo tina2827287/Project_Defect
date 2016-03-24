@@ -1,6 +1,5 @@
 var globalStartID = 0;
-var number = $('input[name="number"]');
-var chooseStaus = 'all';
+var number = $('input[name="num"]');
 var getdate;
 
 $(document).ready(function () {
@@ -14,19 +13,27 @@ $(document).ready(function () {
         Mon = '0' + Mon;
     var Day = d.getDate();
     var Now = Year + '-' + Mon + '-' + Day;
-    console.log(Now);
     getdate = Now;
+
+    $('#date').val(getdate);
+
+
+
     var StartID = globalStartID;
     var endID = $('#endID').val();
     var dest = 'search_date.php';
-    getData(Now, StartID, dest, chooseStaus, '', 'default');
-    globalStartID += 10;
 
-    endID = $('#endID').val();
-    console.log(endID);
-    if (endID < globalStartID && endID != 0) {
-        $('#more').fadeOut();
+    console.log(globalStartID, endID);
+
+    getData(getdate, StartID, endID, dest, '', 'default');
+
+    globalStartID += 10;
+    if (globalStartID > 0) {
+        endID = $('#endID').val();
+        console.log(globalStartID, endID);
     }
+
+
 
     /////////////滑動效果/////////////////
 
@@ -42,19 +49,19 @@ $(document).ready(function () {
         showAnim: 'slideDown',
         onSelect: function (dateText, inst) {
             getdate = dateText;
-            //console.log(getdate);
+
+            globalStartID = 0;
+            console.log(getdate);
             var StartID = globalStartID;
             var endID = $('#endID').val();
-            var dest = 'search_date.php';
+            console.log(endID, globalStartID);
 
-            /*      $('input:checkbox:checked[name="sw_def"]').click(function () {
-                chooseStaus = 'defect';
-            });
-            */
-            getData(getdate, StartID, dest, chooseStaus, '', 'date');
+            var dest = 'search_date.php';
+            getData(getdate, StartID, endID, dest, '', 'default');
             globalStartID += 10;
         }
     });
+
     ////////已在查詢 按more看更多////////
     $('#more').click(function () {
 
@@ -62,13 +69,14 @@ $(document).ready(function () {
         var StartID = globalStartID;
         var endID = $('#endID').val();
         var dest = 'search_date.php';
-
-        getData(Date, StartID, dest, chooseStaus, '', 'default');
+        console.log(globalStartID, endID);
+        getData(Date, StartID, endID, dest, '', 'default');
         globalStartID += 10;
-        console.log(globalStartID);
-        console.log(endID);
-        if ((endID % 10 != 0)) {
-            $('#more').fadeOut();
+
+        if (globalStartID > 0) { // 按過more才可以抓到正確的endID否則endID會錯誤
+            // endID = $('#endID').val();
+            console.log(globalStartID, endID);
+
         }
     });
 
@@ -82,10 +90,10 @@ $(document).ready(function () {
         /////用編號 或是 用日期+choose    
         if (datanum) {
             var StartID = globalStartID;
-            var EndID = $('#EndID').val();
+            var endID = $('#endID').val();
             var dest = 'search_num.php';
 
-            getData(getdate, StartID, dest, chooseStaus, datanum, 'keyword');
+            getData(getdate, StartID, dest, datanum, 'keyword');
         }
 
         return false;

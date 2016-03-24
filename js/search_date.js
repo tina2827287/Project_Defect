@@ -1,6 +1,6 @@
-function getData(Date, StartId, dest, chooseStaus, keyword, searchtype) {
+function getData(Date, StartId, endID, dest, keyword, searchtype) {
 
-    console.log(Date + StartId + dest + chooseStaus + keyword + searchtype);
+    console.log(Date + StartId + dest + keyword + searchtype);
 
     $.ajax({
         url: dest,
@@ -9,7 +9,7 @@ function getData(Date, StartId, dest, chooseStaus, keyword, searchtype) {
             'Date': Date,
             'keyword': keyword,
             'StartId': StartId,
-            'chooseStaus': chooseStaus
+            'endID': endID,
         },
         type: "POST",
         dataType: 'html',
@@ -24,6 +24,13 @@ function getData(Date, StartId, dest, chooseStaus, keyword, searchtype) {
             $('.accro').accordion('refresh');
 
             console.log(response); //在主控台印出整個JSON
+            console.log(globalStartID, endID);
+            endID = $('#endID').val();
+            //  console.log(globalStartID, endID);
+            if (endID < globalStartID && endID != 0) {
+                console.log(globalStartID, endID);
+                $('#more').fadeOut();
+            }
         },
 
         error: function (xhr, ajaxOptions, thrownError) {

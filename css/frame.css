@@ -162,11 +162,11 @@ nav form>div.search-div input#date:focus {
 }
 
 nav form>div.search-div input#num {
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
-    height: 100%;
-    padding-top: 30px;
+    height: 30px;
+    padding: 20px;
     box-sizing: border-box;
     background-color: transparent;
     border: 0;
@@ -175,7 +175,10 @@ nav form>div.search-div input#num {
     transition: background-color 0.2s;
 }
 
-nav form>div.search-div input#num:hover,
+nav form>div.search-div input#num:hover {
+    background-color: #225588;
+}
+
 nav form>div.search-div input#num:focus {
     background-color: #225588;
 }
@@ -234,7 +237,7 @@ label {
 div#sw-frame {
     display: inline-block;
     position: relative;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 60px;
     height: 30px;
     background: #005AB5;

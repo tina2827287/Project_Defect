@@ -24,9 +24,12 @@
             </div>
             <div class="search-div">
                 <h3>編號查詢</h3>
-                <input name="num" id="num" type="text" placeholder="輸入產品編碼">
+                <input name="num" id="num" type="text" placeholder="輸入產品編碼" autocomplete="off">
             </div>
-            <div class="search-div">All
+
+
+            <div class="search-div">
+                <h3>Staus</h3>All
                 <div id="sw-frame">
                     <input type="checkbox" id="switch" name="sw_def">
                     <label for="switch">
@@ -39,14 +42,13 @@
     </nav>
     <div class="wrapper">
         <ul id="content">
-            <p>Defect searching results for 2016/03/24</p>
+            <p>Defect Searching Results</p>
             <li id="content-head">
                 <span>編號</span>
                 <span>日期</span>
                 <span>Status</span>
             </li>
             <li class="accro">
-
                 <input name="endID" id="endID" value="0" type="hidden">
             </li>
             <div id="more">
