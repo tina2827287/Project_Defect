@@ -110,6 +110,13 @@ $(document).ready(function () {
 
     });
 
+    ////////如果點擊Top - 呼叫ScrollTo Plugin////////
 
+    $('#scrollTop').click(function () {
 
+        $.scrollTo('header', 400); //800 ms
+
+    });
+
+    /////////////////////////
 });

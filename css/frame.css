@@ -444,16 +444,29 @@ ul#content li>div {
     background-color: transparent;
     left: 50%;
     margin-left: -400px;
+    margin-bottom: 30px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (min-width:576px) and (max-width: 960px) {
     ul#content li>div {
         position: relative;
-        width: 90%;
-        height: auto;
+        width: 576px;
+        height: 432px;
         background-color: transparent;
         left: 50%;
-        margin-left: -45%;
+        margin-left: -288px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    ul#content li>div {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        background-color: transparent;
+        left: 50%;
+        margin-left: -200px;
+        margin-bottom: 15px;
     }
 }
 
@@ -488,9 +501,23 @@ footer {
 }
 
 footer p {
+    font-size: 0.8em;
     position: relative;
     text-align: center;
     color: #eee;
+}
+
+footer a {
+    font-size: 1.5em;
+    display: inline-block;
+    padding: 15px;
+    box-sizing: content-box;
+    text-decoration: none;
+    color: #eee;
+}
+
+#scrollTop {
+    cursor: pointer;
 }
 
 @keyframes fadeUp {
