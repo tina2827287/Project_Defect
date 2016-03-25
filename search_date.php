@@ -9,7 +9,6 @@
 	$chooseStaus=$_POST["chooseStaus"];
 
 $query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
-//$query_num = "SELECT COUNT(*) FROM productinfo WHERE date(pDate)='$date'";
 
 
 	$result = mysqli_query($link, $query);
@@ -32,14 +31,13 @@ if (!$result){
         else {
 				
             do {
-					if($row["pState"])
+					if($row["pState"])//劣品
 					{
-						$icon = "Defect\"><i class=\"fa fa-times-circle-o\"></i>";
-										echo "
-                    <h3>
+                            echo "
+                                <h3>
 								<span class=\"ProductNum\">".$row["pNum"]."</span>
 								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
-								<span class=\"Def-Icon ".$icon."</span>
+								<span class=\"Def-Icon Defect\"><i class=\"fa fa-times-circle-o\"></i></span>
 								</h3>
 								<div>
 								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
@@ -48,18 +46,17 @@ if (!$result){
 								</div>";
                     
                     } 
-					else 
+					else //良品
 					{
-						$icon = "Well\"><i class=\"fa fa-check-circle-o\"></i>";
-                        					echo "
-                    <h3>
+
+    					echo "
+                                <h3 class=\"Well\">
 								<span class=\"ProductNum\">".$row["pNum"]."</span>
 								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
-								<span class=\"Def-Icon ".$icon."</span>
+								<span class=\"Def-Icon Well\"><i class=\"fa fa-check-circle-o\"></i></span>
 								</h3>
 								<div></div>
 								";
-                        
                         
 					}
 					//每輸出一項結果endID遞增

@@ -352,6 +352,10 @@ ul#content li h3 {
     animation: fadeUp 1s;
 }
 
+.hide {
+    display: none !important;
+}
+
 ul#content li span {
     display: inline-block;
     position: relative;

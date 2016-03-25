@@ -21,9 +21,19 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
             }
             $('input[type="hidden"]').remove();
             $('.accro').append(response);
+
+            if ($('#switch').prop("checked")) {
+                console.log('Checked');
+                $('.Well').addClass('hide');
+            } else {
+                $('.Well').removeClass('hide');
+            }
+
             $('.accro').accordion('refresh');
 
             console.log(response); //在主控台印出整個JSON
+
+
 
             endID = $('#endID').val();
             console.log(globalStartID, endID);

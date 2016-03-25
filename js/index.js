@@ -22,14 +22,14 @@ $(document).ready(function () {
     var endID = $('#endID').val();
     var dest = 'search_date.php';
 
-    console.log(globalStartID, endID);
+    //console.log(globalStartID, endID);
 
     getData(getdate, StartID, endID, dest, '', 'default');
 
     globalStartID += 10;
     if (globalStartID > 0) {
         endID = $('#endID').val();
-        console.log(globalStartID, endID);
+        //  console.log(globalStartID, endID);
     }
 
 
@@ -44,22 +44,24 @@ $(document).ready(function () {
 
     //////////表單送出////////////
 
-    $('#submit').submit(function () {
 
 
-        var num = $('input[name="num"]').val();
-        console.log(A, num);
+    $('#num').change(function () {
 
-        /////用編號 或是 用日期+choose    
-        if (num) {
-            var StartID = globalStartID;
-            var endID = $('#endID').val();
-            var dest = 'search_num.php';
+        var num = $('#num').val();
+        console.log(num);
+        var StartID = globalStartID;
+        var endID = $('#endID').val();
+        var dest = 'search_num.php';
 
-            getData(getdate, StartID, endID, dest, datanum, 'keyword');
-        }
+        getData(getdate, StartID, endID, dest, num, 'keyword');
 
     });
+
+
+    /////用編號 或是 用日期+choose    
+
+
 
 
 
@@ -79,8 +81,14 @@ $(document).ready(function () {
             $('.accro').empty();
             $('#more').fadeIn();
             var dest = 'search_date.php';
+
             getData(getdate, StartID, endID, dest, '', 'default');
             globalStartID += 10;
+
+
+
+
+
         }
     });
 
@@ -102,8 +110,16 @@ $(document).ready(function () {
         }
     });
 
-    /////////////////////
+    //////////偵測開關開啟與否///////////
+    $('#switch').click(function () {
+        if ($('#switch').prop("checked")) {
+            console.log('Checked');
+            $('.Well').addClass('hide');
+        } else {
+            $('.Well').removeClass('hide');
+        }
 
+    });
 
 
 
