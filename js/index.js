@@ -42,27 +42,19 @@ $(document).ready(function () {
         animate: 200
     });
 
-    //////////表單送出////////////
+    //////////編號改變即送出////////////
 
+    $('#num').keyup(function () {
 
-
-    $('#num').change(function () {
+        $('.accro').empty();
 
         var num = $('#num').val();
         console.log(num);
-        var StartID = globalStartID;
-        var endID = $('#endID').val();
-        var dest = 'search_num.php';
 
-        getData(getdate, StartID, endID, dest, num, 'keyword');
+        var dest = 'search_num.php';
+        getData('', '', '', dest, num, 'keyword');
 
     });
-
-
-    /////用編號 或是 用日期+choose    
-
-
-
 
 
     /////////////選擇日期/////////////////
@@ -84,9 +76,6 @@ $(document).ready(function () {
 
             getData(getdate, StartID, endID, dest, '', 'default');
             globalStartID += 10;
-
-
-
 
 
         }

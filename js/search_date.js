@@ -31,7 +31,7 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
 
             $('.accro').accordion('refresh');
 
-            console.log(response); //在主控台印出整個JSON
+            //  console.log(response); //在主控台印出整個JSON
 
 
 

@@ -7,7 +7,7 @@
 
 	
 	//設定查詢語句與查詢-查詢日期
-	$query = "SELECT * FROM productinfo WHERE pNum=$num ";
+	$query = "SELECT * FROM productinfo WHERE pNum='$num'";
 	$result = mysqli_query($link, $query);
 
 	if (!$result){
@@ -19,7 +19,7 @@
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if ( !$row ) {
 						//資料庫為空的輸出處理
-            echo '<p>無此產品</p>';
+            echo "";
         }
         else {
 				//設定endID
@@ -27,22 +27,30 @@
             do {
 					if($row["pState"])
 					{
-						$icon = "Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect";
-					} 
-					else 
-					{
-						$icon = "Well\"><i class=\"fa fa-check-circle-o\"></i>OK";
-					}
-					echo "<h3>
+						echo "
+                                <h3>
 								<span class=\"ProductNum\">".$row["pNum"]."</span>
-								<span class=\"Date\">".substr($row["pDate"] ,0 ,10)."</span>
-								<span class=\"Def-Icon ".$icon."</span>
+								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
+								<span class=\"Def-Icon Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect</span>
 								</h3>
 								<div>
 								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
 								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\">
 								</a>
 								</div>";
+					} 
+					else 
+					{
+						echo "
+                                <h3 class=\"Well\">
+								<span class=\"ProductNum\">".$row["pNum"]."</span>
+								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
+								<span class=\"Def-Icon Well\"><i class=\"fa fa-check-circle-o\"></i>Well</span>
+								</h3>
+								<div></div>
+								";
+					}
+					
 					//每輸出一項結果endID遞增
 					$endID++;
             }
