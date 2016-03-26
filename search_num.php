@@ -22,9 +22,6 @@
             echo "";
         }
         else {
-				//設定endID
-					$endID = 0;
-            do {
 					if($row["pState"])
 					{
 						echo "
@@ -51,10 +48,6 @@
 								";
 					}
 					
-					//每輸出一項結果endID遞增
-					$endID++;
-            }
-			while($row = mysqli_fetch_array($result, MYSQLI_ASSOC));
 				//{$endID}可以直接把整數轉成字串
 				echo "<input type=\"hidden\" id=\"EndID\" value=\"{$endID}\">";
         }

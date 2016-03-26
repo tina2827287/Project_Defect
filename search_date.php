@@ -19,7 +19,6 @@ $query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10"
 if (!$result){
 			//查詢失敗的錯誤處理	
       trigger_error('query failed', E_USER_ERROR);
-        trigger_error('query_num failed', E_USER_ERROR);
     }
 	else 
 	{

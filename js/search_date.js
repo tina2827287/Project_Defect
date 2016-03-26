@@ -40,6 +40,8 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
             if (endID < globalStartID && endID != 0) {
                 console.log(globalStartID, endID);
                 $('#more').fadeOut();
+            } else {
+                $('#more').fadeIn();
             }
         },
 
