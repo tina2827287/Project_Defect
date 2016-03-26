@@ -1,0 +1,103 @@
+ul#content li#content-error {
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+ul#content li#content-error h3 {
+    border-top: none;
+}
+
+ul#content li#content-head span:last-child {
+    flex: 0.5;
+}
+
+ul#content li span.err-pNum {
+    flex: 2;
+}
+
+ul#content li span.err-pNum input {
+    width: 90%;
+    padding: 5px;
+    background-color: rgba(0, 51, 120, 0.8);
+    border: 0;
+    box-shadow: 0;
+    color: #fff;
+    outline: 0;
+}
+
+ul#content li span.err-pNum input:hover,
+ul#content li span.err-pNum input:focus {
+    background-color: rgba(34, 85, 136, 0.8);
+    border-bottom: 2px solid rgba(0, 51, 120, 1);
+}
+
+ul#content li span.err-update {
+    flex: 0.8;
+}
+
+ul#content li span.user-name input {
+    width: 90%;
+    padding: 10px;
+    font-size: 0.8em;
+    background-color: rgba(0, 102, 255, 0.8);
+    border: 0;
+    box-shadow: 0;
+    color: #fff;
+    outline: 0;
+}
+
+ul#content li span.user-name input:hover,
+ul#content li span.user-name input:focus {
+    font-size: 0.8em;
+    background-color: rgba(34, 85, 136, 0.8);
+    border-bottom: 2px solid rgba(0, 51, 120, 1);
+}
+
+ul#content li span.user-passwd input {
+    width: 90%;
+    padding: 10px;
+    font-size: 0.8em;
+    background-color: rgba(0, 51, 120, 0.8);
+    border: 0;
+    box-shadow: 0;
+    color: #fff;
+    outline: 0;
+}
+
+ul#content li span.user-passwd input:hover,
+ul#content li span.user-passwd input:focus {
+    font-size: 0.8em;
+    background-color: rgba(34, 85, 136, 0.8);
+    border-bottom: 2px solid rgba(0, 51, 120, 1);
+}
+
+ul#content li span.user-add {
+    flex: 0.5;
+}
+
+.mybtn {
+    padding: 0.25em 1em;
+}
+
+.chg-btn {
+    background-color: transparent;
+    border: 2px solid #7f0;
+    border-radius: 15px;
+    color: #77FF00;
+}
+
+.add-btn {
+    background-color: transparent;
+    border: 2px solid #fc2;
+    border-radius: 15px;
+    color: #fc2;
+}
+
+.del-btn {
+    background-color: transparent;
+    border: 2px solid #fc2;
+    border-radius: 15px;
+    color: #fc2;
+}

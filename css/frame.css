@@ -370,6 +370,7 @@ ul#content li span {
     box-sizing: border-box;
     text-align: center;
     color: #fff;
+    flex: 1;
 }
 
 @media screen and (min-width:576px) and (max-width: 960px) {
@@ -411,25 +412,11 @@ ul#content li span {
     }
 }
 
-ul#content li span.ProductNum {
-    flex: 1;
-}
-
-ul#content li span.Date {
-    flex: 1;
-}
-
-ul#content li span.Def-Icon {
-    flex: 1;
-    color: #fff;
-}
-
 ul#content li span.Def-Icon.Defect {
     color: #f00;
 }
 
 ul#content li span.Def-Icon.Well {
-    flex: 1;
     color: #eee;
 }
 

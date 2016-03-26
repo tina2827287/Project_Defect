@@ -24,6 +24,7 @@ if($_GET["logout"]){
 	if (!$result){
         //查詢失敗的錯誤處理	
                         echo '<meta http-equiv=REFRESH CONTENT=0;url="./login.html">';
+        exit;
         trigger_error('query failed', E_USER_ERROR);
     }
 	else 
@@ -33,6 +34,7 @@ if($_GET["logout"]){
            if(!$row)
            {
                         echo '<meta http-equiv=REFRESH CONTENT=0;url="./login.html">';
+               exit;
            }
             else
             {

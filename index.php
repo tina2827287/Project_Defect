@@ -25,7 +25,7 @@ if(!isset($_SESSION["if_login"])){
 
     <body>
         <header>
-            <h1>Defect Search<?php echo $_SESSION["if_login"];?></h1>
+            <h1>Defect Search</h1>
         </header>
         <nav id="#top-bar">
             <form>
