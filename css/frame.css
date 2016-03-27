@@ -345,7 +345,7 @@ ul#content li h3 {
     margin: 0;
     outline: none;
     /*    選取時的外框*/
-    padding: 0.5em 0;
+    padding: 0.5em;
     box-sizing: border-box;
     border-top: 1px solid #ddd;
     cursor: pointer;

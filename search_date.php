@@ -8,13 +8,9 @@
 	$date = $_POST["Date"];
 	$chooseStaus=$_POST["chooseStaus"];
 
-$query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
-
-
+    $query = "SELECT * FROM productinfo WHERE date(pDate)='$date' LIMIT $startID,10";
 	$result = mysqli_query($link, $query);
 
- //   $result_num = mysqli_query($link, $query_num);
-//    $rowcount=mysqli_num_rows($result_num);
 
 if (!$result){
 			//查詢失敗的錯誤處理	

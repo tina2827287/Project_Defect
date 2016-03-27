@@ -1,8 +1,13 @@
+header {
+    box-shadow: 0px 5px 30px 2px rgba(0, 0, 0, 0.5);
+}
+
 ul#content li#content-error {
     border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: transparent;
     margin-bottom: 15px;
     padding-top: 15px;
+    padding-right: 15px;
 }
 
 ul#content li#content-error h3 {
@@ -15,10 +20,12 @@ ul#content li#content-head span:last-child {
 
 ul#content li span.err-pNum {
     flex: 2;
+    padding-left: 0;
 }
 
 ul#content li span.err-pNum input {
     width: 90%;
+    text-align: center;
     padding: 5px;
     background-color: rgba(0, 51, 120, 0.8);
     border: 0;
@@ -29,21 +36,23 @@ ul#content li span.err-pNum input {
 
 ul#content li span.err-pNum input:hover,
 ul#content li span.err-pNum input:focus {
+    text-align: center;
     background-color: rgba(34, 85, 136, 0.8);
     border-bottom: 2px solid rgba(0, 51, 120, 1);
 }
 
 ul#content li span.err-update {
-    flex: 0.8;
+    flex: 0.5;
 }
 
 ul#content li span.user-name input {
     width: 90%;
     padding: 10px;
-    font-size: 0.8em;
-    background-color: rgba(0, 102, 255, 0.8);
+    text-align: center;
+    background-color: rgba(0, 51, 120, 0.8);
     border: 0;
     box-shadow: 0;
+    font-size: 0.8em;
     color: #fff;
     outline: 0;
 }
@@ -58,6 +67,7 @@ ul#content li span.user-name input:focus {
 ul#content li span.user-passwd input {
     width: 90%;
     padding: 10px;
+    text-align: center;
     font-size: 0.8em;
     background-color: rgba(0, 51, 120, 0.8);
     border: 0;
@@ -69,6 +79,7 @@ ul#content li span.user-passwd input {
 ul#content li span.user-passwd input:hover,
 ul#content li span.user-passwd input:focus {
     font-size: 0.8em;
+    text-align: center;
     background-color: rgba(34, 85, 136, 0.8);
     border-bottom: 2px solid rgba(0, 51, 120, 1);
 }
@@ -77,27 +88,49 @@ ul#content li span.user-add {
     flex: 0.5;
 }
 
+ul#content li span.user-del {
+    flex: 0.5;
+}
+
 .mybtn {
-    padding: 0.25em 1em;
+    padding: 0.25em 0.75em;
+    font-size: 0.8em;
+}
+
+.mybtn i {
+    padding-left: 0.25em;
 }
 
 .chg-btn {
-    background-color: transparent;
-    border: 2px solid #7f0;
+    background-color: rgba(0, 136, 0, 0.2);
+    border: 2px solid #3f3;
     border-radius: 15px;
-    color: #77FF00;
+    color: #3f3;
+}
+
+.chg-btn:hover {
+    color: #eee;
 }
 
 .add-btn {
-    background-color: transparent;
+    padding: 0.25em 1.2em;
+    background-color: rgba(255, 119, 0, 0.2);
     border: 2px solid #fc2;
     border-radius: 15px;
     color: #fc2;
 }
 
+.add-btn:hover {
+    color: #eee;
+}
+
 .del-btn {
-    background-color: transparent;
-    border: 2px solid #fc2;
+    background-color: rgba(136, 0, 0, 0.1);
+    border: 2px solid #f00;
     border-radius: 15px;
-    color: #fc2;
+    color: #f00;
+}
+
+.del-btn:hover {
+    color: #eee;
 }
