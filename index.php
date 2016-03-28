@@ -2,7 +2,6 @@
 
 session_start();
 if(!isset($_SESSION["if_login"])){
-
     echo '<meta http-equiv=REFRESH CONTENT=0;url="./login.html">';
     exit;
 }

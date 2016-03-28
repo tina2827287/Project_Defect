@@ -34,8 +34,13 @@
 }
 
 .pure-form legend {
-    height: 30px;
-    padding: 30px;
+    position: relative;
+    height: 100px;
+    padding: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    box-sizing: border-box;
     text-align: center;
     color: #fc2;
     font-size: 2em;

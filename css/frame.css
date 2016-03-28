@@ -68,6 +68,7 @@ header {
 header h1 {
     position: relative;
     text-align: center;
+    text-shadow: 0px 0px 30px rgba(34, 85, 136, 0.9);
     color: #fff;
     font-family: 'Rokkitt', serif;
     letter-spacing: 3px;
@@ -354,6 +355,10 @@ ul#content li h3 {
 
 .hide {
     display: none !important;
+}
+
+ul#content li span.ui-accordion-header-icon {
+    display: none;
 }
 
 ul#content li span {
