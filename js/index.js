@@ -72,12 +72,11 @@ $(document).ready(function () {
 
             $('.accro').empty();
 
-            console.log('fadein');
             var dest = 'search_date.php';
 
             getData(getdate, StartID, endID, dest, '', 'default');
             globalStartID += 10;
-           
+
 
         }
     });

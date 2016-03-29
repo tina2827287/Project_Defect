@@ -5,7 +5,6 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
     $.ajax({
         url: dest,
         data: {
-
             'Date': Date,
             'keyword': keyword,
             'StartId': StartId,
@@ -17,7 +16,7 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
 
         success: function (response) {
             if (searchtype == 'keyword') {
-                $('#more').remove();
+                $('#more').fadeOut();
             }
             $('input[type="hidden"]').remove();
             $('.accro').append(response);
@@ -31,9 +30,7 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
 
             $('.accro').accordion('refresh');
 
-            //  console.log(response); //在主控台印出整個JSON
-
-
+            console.log(response); //在主控台印出整個JSON
 
             endID = $('#endID').val();
             console.log(globalStartID, endID);
@@ -41,7 +38,12 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
                 console.log(globalStartID, endID);
                 $('#more').fadeOut();
             } else {
-                $('#more').fadeIn();
+
+                console.log('fadeIn');
+                var m = $('#more');
+                console.log(m);
+                m.css('display', 'block');
+
             }
         },
 
