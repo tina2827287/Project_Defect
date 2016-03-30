@@ -67,9 +67,9 @@ if(!isset($_SESSION["if_login"])){
         <div class="wrapper">
             <ul id="content">
                 <li id="content-error">
-                    <form action="./user_chg.php" method="post">
+                    <form action="./user_chg.php" method="post" id="pnumForm">
                         <h3>
-                        <span class="err-pNum"><input type="text" name="pnum" placeholder="Add ProductNum"></span>
+                        <span class="err-pNum"><input type="text" id="pnum" name="pnum" placeholder="Add ProductNum"></span>
                         <span class="err-update"><button class="mybtn chg-btn">Change <i class="fa fa-pencil"></i></button></span>
                     </h3>
                     </form>
@@ -80,10 +80,10 @@ if(!isset($_SESSION["if_login"])){
                     <span>Option</span>
                 </li>
                 <li class="content-li">
-                    <form action="./user_add.php" method="post">
+                    <form action="./user_add.php" method="post" id="userForm">
                         <h3>
-                        <span class="user-name" ><input  name="uname" type="text" placeholder="Add Username"></span>
-                        <span class="user-passwd"><input   name="upw" type="text" placeholder="Add Password"></span>
+                        <span class="user-name" ><input id="uname" name="uname" type="text" placeholder="Add Username"></span>
+                        <span class="user-passwd"><input id="upw"  name="upw" type="text" placeholder="Add Password"></span>
                         <span class="user-add"><button class="mybtn add-btn" type="submit">Add <i class="fa fa-plus-square"></i></button></span>
                     </h3>
                     </form>

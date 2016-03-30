@@ -52,7 +52,7 @@ if(!isset($_SESSION["if_login"])){
         </nav>
         <div class="wrapper">
             <ul id="content">
-                <p>Defect Searching Results</p>
+                <p><span>列印</span></p>
                 <li id="content-head">
                     <span>編號</span>
                     <span>日期</span>
