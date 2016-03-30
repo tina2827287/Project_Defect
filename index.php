@@ -52,7 +52,12 @@ if(!isset($_SESSION["if_login"])){
         </nav>
         <div class="wrapper">
             <ul id="content">
-                <p><span>列印</span></p>
+                <form id="pForm" action="./printtoday.php" method="post">
+                    <p>
+                        <input type="hidden" name="printaaa" id="printaaa" value="2016-03-23">
+                        <button type="submit">Print</button>
+                    </p>
+                </form>
                 <li id="content-head">
                     <span>編號</span>
                     <span>日期</span>

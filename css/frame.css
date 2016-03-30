@@ -283,7 +283,7 @@ ul#content {
     padding: 0;
 }
 
-ul#content > p {
+ul#content form > p {
     padding: 5px 15px;
     box-sizing: border-box;
     text-align: right;
@@ -294,7 +294,7 @@ ul#content > p {
 }
 
 @media screen and (max-width: 576px) {
-    ul#content > p {
+    ul#content form > p {
         position: relative;
         width: 90%;
         left: 50%;
@@ -309,10 +309,11 @@ ul#content > p {
     }
 }
 
-ul#content > p span {
+ul#content form > p button {
     padding: 5px 5px;
     display: inline-block;
     box-sizing: border-box;
+    border: 0;
     text-align: right;
     font-size: 1em;
     color: #fc2;

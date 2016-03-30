@@ -77,7 +77,6 @@ $(document).ready(function () {
             getData(getdate, StartID, endID, dest, '', 'default');
             globalStartID += 10;
 
-
         }
     });
 
@@ -110,6 +109,16 @@ $(document).ready(function () {
 
     });
 
+    ////////////抓PDF/////////////
+    /*
+        $('#printForm').submit(function () {
+
+            //  $('#printaaa').val($('#date').val());
+            return true;
+
+        });*/
+
+
     ////////如果點擊Top - 呼叫ScrollTo Plugin////////
 
     $('#scrollTop').click(function () {
@@ -118,7 +127,6 @@ $(document).ready(function () {
 
     });
 
-    ////////////抓PDF/////////////
 
 
 
