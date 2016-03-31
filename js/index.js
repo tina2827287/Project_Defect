@@ -110,13 +110,16 @@ $(document).ready(function () {
     });
 
     ////////////抓PDF/////////////
-    /*
-        $('#printForm').submit(function () {
 
-            //  $('#printaaa').val($('#date').val());
-            return true;
+    /*  $('#formprint').submit(function () {
 
-        });*/
+          //   $('#printd').val(getdate);
+          A = $('#printd').val();
+          console.log(A);
+          return false;
+
+
+      });*/
 
 
     ////////如果點擊Top - 呼叫ScrollTo Plugin////////

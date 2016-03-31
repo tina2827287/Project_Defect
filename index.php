@@ -52,10 +52,10 @@ if(!isset($_SESSION["if_login"])){
         </nav>
         <div class="wrapper">
             <ul id="content">
-                <form id="pForm" action="./printtoday.php" method="post">
+                <form id="formprint" action="printday.php" method="post">
                     <p>
-                        <input type="hidden" name="printaaa" id="printaaa" value="2016-03-23">
-                        <button type="submit">Print</button>
+                        <input id="printd" name="printd1" value="2016-03-23" type="hidden">
+                        <button type="submit">print page</button>
                     </p>
                 </form>
                 <li id="content-head">
