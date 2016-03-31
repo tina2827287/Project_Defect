@@ -18,7 +18,7 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
             if (searchtype == 'keyword') {
                 $('#more').fadeOut();
             }
-            $('input[type="hidden"]').remove();
+            $('input#endID').remove();
             $('.accro').append(response);
 
             if ($('#switch').prop("checked")) {

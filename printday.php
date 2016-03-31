@@ -7,7 +7,7 @@
 
     <head>
         <title>Result for
-            <?php echo $_POST["printd1"];?>
+            <?php echo $_POST["printd"];?>
         </title>
         <meta charset="utf-8">
         <style>
@@ -22,7 +22,7 @@
                 color: #000;
                 font: italic 85%/1 arial, sans-serif;
                 padding: 1em 0;
-                text-align: center
+                text-align: center;
             }
             
             .pure-table td,
@@ -37,14 +37,14 @@
             
             .pure-table td:first-child,
             .pure-table th:first-child {
-                border-left-width: 0
+                border-left-width: 0;
             }
             
             .pure-table thead {
                 background-color: #e0e0e0;
                 color: #000;
                 text-align: left;
-                vertical-align: bottom
+                vertical-align: bottom;
             }
             
             .pure-table td {
@@ -59,7 +59,7 @@
 
     <body style="text-align: center;">
 
-        <h3>Result for <?php echo $_POST["printd1"];?></h3>
+        <h3>Result for <?php echo $_POST["printd"];?></h3>
         <table style="width: 100%;" class="pure-table pure-table-striped">
 
             <thead>
@@ -76,9 +76,8 @@
 
             <tbody>
                 <?php
-	$date = $_POST["printd1"];
-
-        echo "日期: ".$date;
+      
+	$date = $_POST["printd"];
 
     $query = "SELECT * FROM productinfo WHERE date(pDate)='$date'";
 	$result = mysqli_query($link, $query);
@@ -99,13 +98,13 @@ if (!$result){
                          echo "<tr style=\"border-bottom: 1px solid #eee;\">
                                  <td>".$row["pNum"]."</td>
                                  <td>".substr($row["pDate"] ,0 ,16)."</td>
-                                 <td>X Defect</td>
+                                 <td>Defect</td>
                              </tr>";
                      } else {							
                          echo "<tr style=\"border-bottom: 1px solid #eee;\">
                                  <td>".$row["pNum"]."</td>
                                  <td>".substr($row["pDate"] ,0 ,16)."</td>
-                                 <td>V Well</td>
+                                 <td>OK</td>
                              </tr>";
                      }
              } while($row = mysqli_fetch_array($result, MYSQLI_ASSOC));
@@ -123,6 +122,5 @@ if (!$result){
             window.print();
         })();
     </script>
-
 
     </html>

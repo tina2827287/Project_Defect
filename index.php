@@ -52,10 +52,16 @@ if(!isset($_SESSION["if_login"])){
         </nav>
         <div class="wrapper">
             <ul id="content">
-                <form id="formprint" action="printday.php" method="post">
+                <form id="formprint" action="printday.php" method="post" target="_blank">
                     <p>
-                        <input id="printd" name="printd1" value="2016-03-23" type="hidden">
-                        <button type="submit">print page</button>
+                        <input id="printd" name="printd" type="hidden">
+                        <button type="submit">今日列表</button>
+                    </p>
+                </form>
+                <form id="formchart" action="googleCh.php" method="post" target="_blank">
+                    <p>
+                        <input id="chartd" name="chartd" type="hidden">
+                        <button type="submit">統計圖表</button>
                     </p>
                 </form>
                 <li id="content-head">

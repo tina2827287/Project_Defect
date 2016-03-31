@@ -111,15 +111,21 @@ $(document).ready(function () {
 
     ////////////抓PDF/////////////
 
-    /*  $('#formprint').submit(function () {
+    $('#formprint').submit(function () {
 
-          //   $('#printd').val(getdate);
-          A = $('#printd').val();
-          console.log(A);
-          return false;
+        $('#printd').val(getdate);
+        return true;
 
+    });
 
-      });*/
+    //////////抓google chart//////
+
+    $('#formchart').submit(function () {
+
+        $('#chartd').val(getdate);
+        return true;
+
+    });
 
 
     ////////如果點擊Top - 呼叫ScrollTo Plugin////////
