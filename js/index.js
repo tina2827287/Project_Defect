@@ -11,6 +11,8 @@ $(document).ready(function () {
     if (Mon < 10)
         Mon = '0' + Mon;
     var Day = d.getDate();
+    if (Day < 10)
+        Day = '0' + Day;
     var Now = Year + '-' + Mon + '-' + Day;
     getdate = Now;
 

@@ -50,7 +50,7 @@ $well=$total-$def;
     </head>
 
     <body style="text-align: center;">
-        <div id="piechart" style="width: 100%; height: auto; text-align: center;">
+        <div id="piechart" style="width: 900px; height: 300px; text-align: center; font-size:1.5em;">
         </div>
     </body>
 
