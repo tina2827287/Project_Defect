@@ -69,7 +69,7 @@ if(!isset($_SESSION["if_login"])){
                 <li id="content-error">
                     <form action="./user_chg.php" method="post" id="pnumForm">
                         <h3>
-                        <span class="err-pNum"><input type="text" id="pnum" name="pnum" placeholder="Add ProductNum"></span>
+                        <span class="err-pNum"><input type="text" id="pnum" name="pnum" placeholder="輸入誤檢產品編號"></span>
                         <span class="err-update"><button class="mybtn chg-btn">Change <i class="fa fa-pencil"></i></button></span>
                     </h3>
                     </form>
@@ -82,21 +82,11 @@ if(!isset($_SESSION["if_login"])){
                 <li class="content-li">
                     <form action="./user_add.php" method="post" id="userForm">
                         <h3>
-                        <span class="user-name" ><input id="uname" name="uname" type="text" placeholder="Add Username"></span>
-                        <span class="user-passwd"><input id="upw"  name="upw" type="text" placeholder="Add Password"></span>
+                        <span class="user-name" ><input id="uname" name="uname" type="text" placeholder="輸入新增使用者帳號"></span>
+                        <span class="user-passwd"><input id="upw"  name="upw" type="text" placeholder="輸入新增使用者密碼"></span>
                         <span class="user-add"><button class="mybtn add-btn" type="submit">Add <i class="fa fa-plus-square"></i></button></span>
                     </h3>
                     </form>
-                    <h3>
-                        <span>account</span>
-                        <span>paddword</span>
-                        <span class="user-del"><button class="mybtn del-btn">Delete<i class="fa fa-trash"></i></button></span> 
-                    </h3>
-                    <h3>
-                        <span>account</span>
-                        <span>paddword</span>
-                        <span class="user-del"><button class="mybtn del-btn">Delete<i class="fa fa-trash"></i></button></span> 
-                    </h3>
 
                     <?php	
                     //連接資料庫（使用include方便維護）
