@@ -1,31 +1,77 @@
 <?php
 	include("./mysql_connect.php");
 	//取得各ajax欄位資料
-	$date = "2016-04-23";
+	$date=$_POST["chartd"];
     
     $start_day=substr($date ,8);
-    $start_ym=substr($date ,0,8);
+    $start_month=substr($date ,5,2);
+    $start_year=substr($date ,0,4);
+    
     $day7[8];
     $day7_total[8];
     $day7_def[8];
-    for($i=0;$i<7;$i++)
-    {
-        $tmp=$start_day-$i;
-        $day7[$i]=$start_ym.$tmp;
-        
-    //    echo $day7[$i].":  ";
-    
-        $query = "SELECT * FROM productinfo WHERE date(pDate)='$day7[$i]'";
-        $query_def ="SELECT * FROM productinfo WHERE date(pDate)='$day7[$i]' AND pState=1";
 
-        $result = mysqli_query($link, $query);
-        $result_def = mysqli_query($link, $query_def);
-        
-        $day7_total[$i]=mysqli_num_rows($result);
-        $day7_def[$i]=mysqli_num_rows($result_def);
+    if($start_day<7){
+             
+           //  echo "now_month: ".$start_month."</br>";
+                $bef_month=$start_month-1;
+                if($bef_month<10)//<10的要串接0
+                    $bef_month='0'.$bef_month;
+              //  echo "bef_month: ".$bef_month."</br>";
+                    $days=date("t",strtotime($start_year.'-'.$bef_month.'-'.'01'));
+              //  echo "Bef_month-days: ".$days."</br>";
+        //     
+         for($i=0;$i<7;$i++){
+             $tmp=$start_day-$i;
+             
+             if($tmp<10 && $tmp>0)//運算完 <10者要補0
+                 $tmp='0'.$tmp;
+             
+             if($tmp<1){
+                    $tmp=$days;
+                    $days--;
+                    $day7[$i]=$start_year.'-'.$bef_month.'-'.$tmp;
+            }
+             else{
+                  $day7[$i]=$start_year.'-'.$start_month.'-'.$tmp;
+             } 
+                   
+            // echo "day7: ". $day7[$i]."</br>";
 
-        $day7_well[$i]=$day7_total[$i]-$day7_def[$i];
+                    $query = "SELECT * FROM productinfo WHERE date(pDate)='$day7[$i]'";
+                    $query_def ="SELECT * FROM productinfo WHERE date(pDate)='$day7[$i]' AND pState=1";
+
+                    $result = mysqli_query($link, $query);
+                    $result_def = mysqli_query($link, $query_def);
+
+                    $day7_total[$i]=mysqli_num_rows($result);
+                    $day7_def[$i]=mysqli_num_rows($result_def);
+
+                    $day7_well[$i]=$day7_total[$i]-$day7_def[$i];
+            }
         
+            
+        }
+        
+        else{
+                for($i=0;$i<7;$i++){
+
+                    $tmp=$start_day-$i;
+                    $day7[$i]=$start_year.'-'.$start_month.'-'.$tmp;
+
+                //    echo $day7[$i].":  ";
+
+                    $query = "SELECT * FROM productinfo WHERE date(pDate)='$day7[$i]'";
+                    $query_def ="SELECT * FROM productinfo WHERE date(pDate)='$day7[$i]' AND pState=1";
+
+                    $result = mysqli_query($link, $query);
+                    $result_def = mysqli_query($link, $query_def);
+
+                    $day7_total[$i]=mysqli_num_rows($result);
+                    $day7_def[$i]=mysqli_num_rows($result_def);
+
+                    $day7_well[$i]=$day7_total[$i]-$day7_def[$i];
+                }
        // echo "(".$day7_total[$i]." , ".$day7_def[$i].")</br>";
         
     }
@@ -51,7 +97,7 @@
 
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-          ['Date', 'Total', 'Defect'],
+          ['日期', '當日生產總量', '當日瑕疵個數'],
             <?php
             
                for($i=6;$i>0;$i--){
@@ -64,7 +110,7 @@
 
                 var options = {
                     chart: {
-                        title: 'Week Chart'
+                        title: '當周瑕疵率統計圖'
                     }
                 };
 
