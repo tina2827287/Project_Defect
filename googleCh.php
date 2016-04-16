@@ -13,8 +13,6 @@ $total=mysqli_num_rows($result);
 $def=mysqli_num_rows($result_def);
 
 $well=$total-$def;
-
-
  ?>
 
     <html>
@@ -47,11 +45,14 @@ $well=$total-$def;
                 chart.draw(data, options);
             }
         </script>
+
     </head>
 
     <body style="text-align: center;">
+
         <div id="piechart" style="width: 900px; height: 300px; text-align: center; font-size:1.5em;">
         </div>
+
     </body>
 
     </html>
