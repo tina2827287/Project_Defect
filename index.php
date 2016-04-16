@@ -59,10 +59,10 @@ if(!isset($_SESSION["if_login"])){
                             <button type="submit">今日列表</button>
                         </p>
                     </form>
-                    <form id="formchart" action="googleCh.php" method="post" target="_blank">
+                    <form id="formchart" action="weekchart.php" method="post" target="_blank">
                         <p>
                             <input id="chartd" name="chartd" type="hidden">
-                            <button type="submit">統計圖表</button>
+                            <button type="submit">當周統計圖</button>
                         </p>
                     </form>
                 </div>

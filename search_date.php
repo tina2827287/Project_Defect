@@ -21,7 +21,8 @@ if (!$result){
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if ( !$row ) {
 						//資料庫為空的輸出處理
-            echo '<p>無資料</p>';
+            echo '<p  style="text-align:center;font-size:1.5em; color: #fc2;"></br></br>今日尚無資料</br></br></p>';
+            echo "<input type=\"hidden\" id=\"endID\" value=\"-1\">";
         }
         else {
 				

@@ -123,7 +123,7 @@
 
     <body style="text-align: center;">
 
-        <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+        <div id="columnchart_material" style="width: 900px; height: 500px; text-alig:center;"></div>
 
     </body>
 

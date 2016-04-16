@@ -34,7 +34,7 @@ function getData(Date, StartId, endID, dest, keyword, searchtype) {
 
             endID = $('#endID').val();
             console.log(globalStartID, endID);
-            if (endID < globalStartID && endID != 0) {
+            if (endID < globalStartID && endID != 0 || endID == -1) {
                 console.log(globalStartID, endID);
                 $('#more').fadeOut();
             } else {
