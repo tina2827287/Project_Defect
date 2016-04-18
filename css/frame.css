@@ -328,11 +328,12 @@ ul#content form>p {
 
 @media screen and (max-width: 576px) {
     ul#content form > p {
+        display: block;
         position: relative;
         width: 90%;
-        left: 50%;
-        margin-left: -45%;
-        padding: 5px 15px;
+        left: auto;
+        margin-left: 0;
+        padding: 5px 10px;
         box-sizing: border-box;
         text-align: center;
         font-size: 1em;
@@ -353,6 +354,21 @@ ul#content form > p button {
     background-color: #258;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+    ul#content form > p button {
+        padding: 10px 10px;
+        display: inline-block;
+        box-sizing: border-box;
+        border: 0;
+        word-break: keep-all;
+        font-size: 0.9em;
+        color: #fc2;
+        background-color: #258;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 
 ul#content li {
