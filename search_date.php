@@ -20,9 +20,11 @@ if (!$result){
 	{
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if ( !$row ) {
-						//資料庫為空的輸出處理
-            echo '<p  style="text-align:center;font-size:1.5em; color: #fc2;"></br></br>今日尚無資料</br></br></p>';
-            echo "<input type=\"hidden\" id=\"endID\" value=\"-1\">";
+            //資料庫為空的輸出處理
+            if($endID==0){
+                echo '<p  style="text-align:center;font-size:1.5em; color: #fc2;"></br></br>今日尚無資料</br></br></p>';
+                echo "<input type=\"hidden\" id=\"endID\" value=\"-1\">";
+            }
         }
         else {
 				
@@ -62,8 +64,8 @@ if (!$result){
 			while($row = mysqli_fetch_array($result, MYSQLI_ASSOC));
             
 				//{$endID}可以直接把整數轉成字串
-				echo "<input type=\"hidden\" id=\"endID\" value=\"{$endID}\">";
-        }
+				
+        }echo "<input type=\"hidden\" id=\"endID\" value=\"{$endID}\">";
         mysqli_free_result($result);
     }
     mysqli_close($link);

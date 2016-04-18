@@ -135,6 +135,17 @@ nav form>div.search-div:last-child {
     max-width: 220px;
 }
 
+@media screen and (max-width:576px) {
+    nav form>div.search-div:last-child {
+        display: inline-block;
+        position: relative;
+        max-width: none;
+        width: 100%;
+        height: 80px;
+        flex: none;
+    }
+}
+
 nav form>div.search-div h3 {
     margin-top: 5px;
     margin-bottom: 0;

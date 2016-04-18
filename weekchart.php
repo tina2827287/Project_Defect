@@ -85,7 +85,8 @@
     <html>
 
     <head>
-        <title>Result for
+        <title>
+            <?php echo substr($day7[6] ,5,5)." ~ ".substr($day7[0] ,5,5)."一周統計圖表" ?>
         </title>
         <meta charset="utf-8">
         <script type="text/javascript" src="./js/loader.js"></script>
@@ -117,6 +118,10 @@
                 var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
                 chart.draw(data, options);
+                google.visualization.events.addListener(chart, 'ready', function () {
+                    window.print();
+                });
+
             }
         </script>
     </head>
@@ -126,5 +131,7 @@
         <div id="columnchart_material" style="width: 900px; height: 500px; text-alig:center;"></div>
 
     </body>
+
+
 
     </html>
