@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>瑕疵系統-上傳檔案</title>
+</head>
+
+<body>
+    <header>
+        <h1>上傳檔案</h1>
+    </header>
+    <div>
+        <form action="phpul.php" method="post" enctype="multipart/form-data">
+            檔案名稱:
+            <input type="text" name="fName" id="fName">
+            <br> 檔案說明:
+            <input type="text" name="fileContent" id="fileContent">
+            <br> Bef圖片:
+            <input type="file" name="BefImg" id="BefImg" />
+            <br> Aft圖片:
+            <input type="file" name="AftImg" id="AftImg" />
+            <br>選擇檔案:
+            <input type="file" name="ProFile" id="ProFile" />
+            <br>
+            <br>
+            <input type="submit" name="submit" value="上傳檔案" />
+        </form>
+    </div>
+</body>
+
+</html>

@@ -58,7 +58,7 @@ header {
     height: auto;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #3f88c5;
+    background-color: #fff;
     background-image: url(../img/bg3.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -70,9 +70,9 @@ header h1 {
     text-align: center;
     text-shadow: 0px 0px 30px rgba(34, 85, 136, 0.9);
     color: #fff;
-    font-family: 'Rokkitt', serif;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-size: 3em;
+    animation: bigger 2.5s;
 }
 
 nav {
@@ -80,8 +80,7 @@ nav {
     width: 100%;
     height: auto;
     background-color: #003D79;
-    box-shadow: 0px 2px 10px 5px #000;
-    /*#ffff5f;*/
+    box-shadow: 0px 2px 10px 5px #222;
 }
 
 nav form {
@@ -581,6 +580,21 @@ footer a {
     }
     100% {
         transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes bigger {
+    0% {
+        transform: 0;
+        opacity: 0;
+    }
+    25% {
+        transform: scale(1.3, 1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: 0;
         opacity: 1;
     }
 }

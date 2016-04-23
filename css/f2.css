@@ -1,0 +1,590 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background-image: url(../img/textured_paper.png);
+    background-repeat: repeat;
+    font-family: "Lucida Grande", "Ubuntu", "微軟正黑體", Verdanna, sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    box-shadow: none;
+    -webkit-text-fill-color: transparent;
+}
+
+.wrapper {
+    position: relative;
+    width: 960px;
+    height: auto;
+    left: 50%;
+    margin-left: -480px;
+    border: 0;
+}
+
+
+/* 如果使用者之視窗寬度 <= 960px 576px，將會再載入這裡的 CSS。*/
+
+@media screen and (min-width:576px) and (max-width: 960px) {
+    /*<960用%表示(和手機還沒有關係喔!)*/
+    .wrapper {
+        position: relative;
+        width: 90%;
+        height: auto;
+        left: 50%;
+        margin-left: -45%;
+        border: 0;
+    }
+}
+
+@media screen and (max-width:576px) {
+    /*<960用%表示(和手機還沒有關係喔!)*/
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 50%;
+        margin-left: -50%;
+        border: 0;
+    }
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    background-image: url(../img/bg3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+header h1 {
+    position: relative;
+    text-align: center;
+    text-shadow: 0px 0px 30px rgba(34, 85, 136, 0.9);
+    color: #fff;
+    font-family: 'Rokkitt', serif;
+    letter-spacing: 3px;
+    font-size: 3em;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: rgba(1, 22, 39, 0.85);
+}
+
+nav form {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:576px) {
+    /*    手機會影響表單的各項大小跟著縮*/
+    nav form {
+        display: inline;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+}
+
+nav form>div.search-div {
+    display: inline-block;
+    position: relative;
+    height: 80px;
+    flex: 1;
+    border-bottom: 1px solid #000079;
+    color: #fff;
+}
+
+nav form>div.search-div:not(:last-child) {
+    border-right: 2px solid #000079;
+}
+
+@media screen and (max-width:576px) {
+    nav form>div.search-div:not(: last-child) {
+        border-right: 0;
+    }
+}
+
+@media screen and (max-width:576px) {
+    nav form>div.search-div {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 80px;
+        flex: none;
+    }
+}
+
+nav form>div.search-div:last-child {
+    text-align: center;
+    max-width: 220px;
+}
+
+@media screen and (max-width:576px) {
+    nav form>div.search-div:last-child {
+        display: inline-block;
+        position: relative;
+        max-width: none;
+        width: 100%;
+        height: 80px;
+        flex: none;
+    }
+}
+
+nav form>div.search-div h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #ff5820;
+}
+
+nav form>div.search-div input#date {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+nav form>div.search-div input#date:hover,
+nav form>div.search-div input#date:focus {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+nav form>div.search-div input#num {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+nav form>div.search-div input#num:hover {
+    background-color: #225588;
+}
+
+nav form>div.search-div input#num:focus {
+    background-color: #225588;
+}
+
+div span.a {
+    position: absolute;
+    top: 45px;
+    left: 10%;
+}
+
+@media screen and (max-width: 576px) {
+    div span.a {
+        position: absolute;
+        top: 45px;
+        left: 30%;
+    }
+}
+
+div span.d {
+    position: absolute;
+    top: 45px;
+    right: 5%;
+}
+
+@media screen and (max-width: 576px) {
+    div span.d {
+        position: absolute;
+        top: 45px;
+        right: 20%;
+    }
+}
+
+nav form>div {
+    display: inline-block;
+    position: relative;
+    width: 33%;
+    height: 80px;
+    flex: 1;
+}
+
+@media screen and (max-width:576px) {
+    /*    手機會影響表單的各項大小跟著縮*/
+    nav form>div {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 80px;
+        flex: none;
+    }
+}
+
+label {
+    position: relative;
+}
+
+div#sw-frame {
+    display: inline-block;
+    position: relative;
+    margin-top: 5px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    background: rgba(15, 9, 100, 0.1);
+    border-radius: 25px;
+    border: 2px solid #fff;
+    font-size: 0.5em;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label div#sw-div {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: 2px;
+    margin-top: 2px;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked +label div#sw-div {
+    background-color: #f00;
+    transform: translateX(30px);
+}
+
+.fa.fa-search {
+    position: absolute;
+    top: 0.3em;
+    left: 0.6em;
+    color: #258;
+}
+
+ul#content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+.toolform {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+    padding: 2px 15px;
+    color: #258;
+    background-color: rgba(160,160,160,0.5);
+   // background-color: rgba(255, 184, 111, 0.5);
+    // background-color: rgba(147, 170, 226, 0.65);
+    border-radius: 5px;
+}
+
+ul#content form {
+    position: relative;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+ul#content form>p {
+    display: inline-block;
+    padding: 5px 5px;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 576px) {
+    ul#content form > p {
+        display: block;
+        position: relative;
+        width: 90%;
+        left: auto;
+        margin-left: 0;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 1em;
+        border-radius: 5px;
+    }
+}
+
+ul#content form > p button {
+    padding: 8px 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 0;
+    text-align: right;
+    font-size: 1em;
+    font-weight: 600;
+    color: rgba(255, 88, 32, 1);
+    background-color: rgba(0, 38, 73, 0.85);
+    // border: 3px solid rgba(1, 22,39,0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+    ul#content form > p button {
+        padding: 10px 10px;
+        display: inline-block;
+        box-sizing: border-box;
+        border: 0;
+        word-break: keep-all;
+        font-size: 0.9em;
+        color: #fc2;
+        background-color: #258;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+ul#content li {
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+ul#content li#content-head {
+    list-style-type: none;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+@media screen and (max-width: 576px) {
+    ul#content li#content-head {
+        display: none;
+    }
+}
+
+ul#content li#content-head span {
+    flex: 1;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+ul#content li h3 {
+    display: flex;
+    margin: 0;
+    outline: none;
+    /*    選取時的外框*/
+    padding: 0.5em;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+    animation: fadeUp 1s;
+}
+
+.hide {
+    display: none !important;
+}
+
+ul#content li span.ui-accordion-header-icon {
+    display: none;
+}
+
+ul#content li span {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    /* 指的是跟內部的一樣大而不是外面的(因為是inline) */
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    padding-top: 0.4em;
+    /*    內文適用 line-height: 1.75em;*/
+    box-sizing: border-box;
+    text-align: center;
+    color: #053c5e;
+    flex: 1;
+}
+
+@media screen and (min-width:576px) and (max-width: 960px) {
+    /*<960用%表示(和手機還沒有關係喔!)*/
+    ul#content li span {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        /* 指的是跟內部的一樣大而不是外面的(因為是inline) */
+        font-size: 1.1em;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        padding-top: 0.4em;
+        /*        padding: 變成1.1*0.4去做*/
+        /*    內文適用 line-height: 1.75em;*/
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width:576px) {
+    ul#content li span {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        /* 指的是跟內部的一樣大而不是外面的(因為是inline) */
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        padding-top: 0.4em;
+        /*        padding: 變成1.1*0.4去做*/
+        /*    內文適用 line-height: 1.75em;*/
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+ul#content li span.Def-Icon.Defect {
+    color: #f00;
+}
+
+ul#content li span.Def-Icon.Well {
+    color: #053c5e;
+}
+
+ul#content li span.Def-Icon i {
+    margin-right: 5px;
+}
+
+ul#content li>div {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background-color: transparent;
+    left: 50%;
+    margin-left: -400px;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width:576px) and (max-width: 960px) {
+    ul#content li>div {
+        position: relative;
+        width: 576px;
+        height: 432px;
+        background-color: transparent;
+        left: 50%;
+        margin-left: -288px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    ul#content li>div {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        background-color: transparent;
+        left: 50%;
+        margin-left: -200px;
+        margin-bottom: 15px;
+    }
+}
+
+div#more {
+    position: relative;
+    width: 90%;
+    height: 60px;
+    left: 50%;
+    margin-left: -45%;
+    padding: 1px;
+    box-sizing: border-box;
+    background-color: #eee;
+}
+
+div#more h3 {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+div#Radio input {
+    text-align: center;
+    color: #fff;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+footer p {
+    font-size: 0.8em;
+    position: relative;
+    text-align: center;
+    color: #eee;
+}
+
+footer a {
+    font-size: 1.5em;
+    display: inline-block;
+    padding: 15px;
+    box-sizing: content-box;
+    text-decoration: none;
+    color: #eee;
+}
+
+#scrollTop {
+    cursor: pointer;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+/*程式碼media query寫在各個得下面
+做兩次
+*/

@@ -24,7 +24,7 @@ if(!isset($_SESSION["if_login"])){
 
     <body>
         <header>
-            <h1>Defect Search</h1>
+            <h1>瑕疵監測系統</h1>
         </header>
         <nav id="#top-bar">
             <form>
