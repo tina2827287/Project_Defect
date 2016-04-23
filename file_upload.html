@@ -5,26 +5,130 @@
     <meta charset="utf-8">
     <title>瑕疵系統-上傳檔案</title>
 </head>
+<style>
+    body {
+        background-image: url(../img/dark_geometric.png);
+        background-repeat: repeat;
+        font-family: "Lucida Grande", "Ubuntu", "微軟正黑體", Verdanna, sans-serif;
+    }
+    
+    #wrapper {
+        position: relative;
+        width: 500px;
+        height: auto;
+        left: 50%;
+        margin-left: -250px;
+        border: 0;
+        color: #fff;
+    }
+    
+    #hd {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+        background-color: rgba(34, 85, 136, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+    }
+    
+    #hd>h1 {
+        text-align: center;
+        color: #fc2;
+        letter-spacing: 5px;
+    }
+    
+    #tb {
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        width: 450px;
+        margin-left: -225px;
+        margin-top: 15px;
+    }
+    
+    .tb-first {
+        text-align: center;
+        padding: 15px;
+        font-size: 1.1em;
+        letter-spacing: 3px;
+        color: #fc2;
+        background-color: rgba(34, 85, 136, 0.2);
+        border-left: 10px solid rgba(34, 85, 136, 0.5);
+    }
+    
+    .tb-sec {
+        padding: 15px;
+    }
+    
+    .tb-sub {
+        position: relative;
+        text-align: center;
+        padding: 5px;
+    }
+    
+    .tb-sub-input {
+        font-family: inherit;
+        position: relative;
+        width: 200px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 10px 15px;
+        border: 3px solid #fc2;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: rgba(34, 85, 136, 0.2);
+        color: #fc2;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+</style>
 
 <body>
-    <header>
-        <h1>上傳檔案</h1>
-    </header>
-    <div>
+
+    <div id="wrapper">
+        <header id="hd">
+            <h1>程式上傳</h1>
+        </header>
         <form action="phpul.php" method="post" enctype="multipart/form-data">
-            檔案名稱:
-            <input type="text" name="fName" id="fName">
-            <br> 檔案說明:
-            <input type="text" name="fileContent" id="fileContent">
-            <br> Bef圖片:
-            <input type="file" name="BefImg" id="BefImg" />
-            <br> Aft圖片:
-            <input type="file" name="AftImg" id="AftImg" />
-            <br>選擇檔案:
-            <input type="file" name="ProFile" id="ProFile" />
-            <br>
-            <br>
-            <input type="submit" name="submit" value="上傳檔案" />
+            <table id="tb">
+                <tr>
+                    <td class="tb-first">檔案名稱</td>
+                    <td class="tb-sec">
+                        <input type="text" name="fName" id="fName">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tb-first">檔案說明</td>
+                    <td class="tb-sec">
+                        <textarea name="fileContent" id="fileContent" cols="25" rows="8"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tb-first">Bef圖片</td>
+                    <td class="tb-sec">
+                        <input type="file" name="BefImg" id="BefImg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tb-first">Aft圖片</td>
+                    <td class="tb-sec">
+                        <input type="file" name="AftImg" id="AftImg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tb-first">選擇檔案</td>
+                    <td class="tb-sec">
+                        <input type="file" name="ProFile" id="ProFile" />
+                    </td>
+                </tr>
+                <tr class="tb-sub">
+                    <td colspan="2">
+                        <input class="tb-sub-input" type="submit" name="submit" value="上傳檔案" />
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>

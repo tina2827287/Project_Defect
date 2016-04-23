@@ -39,7 +39,7 @@ ob_end_flush();
         
     }
 
- echo '<meta http-equiv=REFRESH CONTENT=0;url="./download.html">';
+ echo '<meta http-equiv=REFRESH CONTENT=0;url="./download.php">';
 
 
 ?>
