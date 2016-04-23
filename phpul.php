@@ -1,13 +1,13 @@
 <?php
     include("./mysql_connect.php");
 
-    $ProName=$_POST["fName"];
+    $ProName=$_POST["fName"];//user自填檔案名稱
     $ProContent=$_POST["fileContent"];
 
     $BefImg=$_FILES["BefImg"];
     $AftImg=$_FILES["AftImg"];
-    $ProFile=$FILES["ProFile"];
-
+    $ProFile=$_FILES["ProFile"];
+    $ProFileName=$_FILES["ProFile"]["name"];//實際程式檔案名稱
     $ImgPath='./dlzip/BAimg/';
     $ProPath='./dlzip/';
 
@@ -40,7 +40,7 @@ echo $AftPath.'<br>';
 echo $ProPath.'<br>';
     move_uploaded_file($_FILES["ProFile"]["tmp_name"] ,$ProPath);
 
-    $query_ins = "INSERT INTO program (ProgramName,ProgramBef,ProgramAft,ProgramContent,SHA) VALUES ('$ProName','$BefPath','$AftPath','$ProContent','$FileSHA')";
+    $query_ins = "INSERT INTO program (ProgramName,ProgramFileName,ProgramBef,ProgramAft,ProgramContent,SHA) VALUES ('$ProName','$ProFileName','$BefPath','$AftPath','$ProContent','$FileSHA')";
     $result_ins = mysqli_query($link, $query_ins);
  
 

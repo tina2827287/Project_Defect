@@ -154,18 +154,17 @@ header h2 {
     color: #fc2;
 }
 
-.pure-button {
-    border: 0;
-    padding: 0;
+.pure-table td a {
     padding: 5px 15px;
-    background-color: transparent;
-    font-size: 1.5em;
+    color: #fc2;
+    s background-color: transparent;
+    font-size: 2em;
 }
 
-.pure-button:hover {
-    background-image: none;
+.pure-table td a:hover {
     background-color: transparent;
-    font-size: 2em;
+    color: #fc2;
+    font-size: 3.5em;
 }
 
 footer {

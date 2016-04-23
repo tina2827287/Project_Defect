@@ -69,8 +69,7 @@ $dlurl='phpdl.php';
 
                 <tbody>
 
-                    <form action="phpdl.php" method="post" enctype="multipart/form-data">
-                        <?php
+                    <?php
 
                         for($n=1;$n<=$ProNum;$n++){
                         echo "<tr>".
@@ -82,13 +81,11 @@ $dlurl='phpdl.php';
                                     <div><img src=\"".$ProAft[$n]." \"></div>
                                 </td>".
                                 "<td>".$ProCont[$n]."</td>".
-                            "<td>"."<button id=\"".$SHA[$n]."\" class=\"pure-button \" type=\"submit\"><i class=\"fa fa-download\" aria-hidden=\"true\"></i></button>".
+                            "<td>"."<a href=\"phpdl.php?SHA=".$ProSHA[$n]."\"><i class=\"fa fa-download\" aria-hidden=\"true\"></i></a>".
                            "</td>".
                             "</tr>";
                         }                        
                     ?>
-                    </form>
-
                 </tbody>
             </table>
         </div>
