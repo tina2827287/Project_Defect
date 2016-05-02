@@ -154,10 +154,15 @@ header h2 {
     color: #fc2;
 }
 
+.pure-table tr td:nth-child(4) {
+    width: 200px;
+    word-wrap: break-word;
+}
+
 .pure-table td a {
     padding: 5px 15px;
     color: #fc2;
-    s background-color: transparent;
+    background-color: transparent;
     font-size: 2em;
 }
 

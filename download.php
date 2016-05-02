@@ -82,7 +82,7 @@ $dlurl='phpdl.php';
                                 </td>".
                                 "<td>".$ProCont[$n]."</td>".
                             "<td>"."<a href=\"phpdl.php?SHA=".$ProSHA[$n]."\"><i class=\"fa fa-download\" aria-hidden=\"true\"></i></a>".
-                           "</td>".
+                           "</td>". 
                             "</tr>";
                         }                        
                     ?>
