@@ -48,6 +48,9 @@ if(!isset($_SESSION["if_login"])){
                         </label>
                     </div> Defect
                 </div>
+                <div class="search-div">
+                    <a href="download.php" target="_blank">下載專區 <i class="fa fa-download" aria-hidden="true"></i></a>
+                </div>
             </form>
         </nav>
         <div class="wrapper">
@@ -75,13 +78,21 @@ if(!isset($_SESSION["if_login"])){
                     <input name="endID" id="endID" value="0" type="hidden">
                 </li>
                 <div id="more">
-                    <h3>more</h3></div>
+                    <h3>More</h3></div>
             </ul>
             <footer>
+
 
                 <p>
                     <a href="login.php?logout=1">登出</a> Copyright 2016 Ting-Yu Wang
                     <a id="scrollTop">Top</a>
+                </p>
+                <p>
+                    <img id="qrcode" src="./img/app.jpg" alt="">
+                    <span>
+                        瑕疵監測系統APP 
+                    </span>
+
                 </p>
 
             </footer>

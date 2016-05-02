@@ -37,7 +37,7 @@ if (!$result){
 								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
 								<span class=\"Def-Icon Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect</span>
 								</h3>
-								<div>
+								<div class=\"Def-Img\">
 								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
 								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\">
 								</a>
@@ -53,7 +53,7 @@ if (!$result){
 								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
 								<span class=\"Def-Icon Well\"><i class=\"fa fa-check-circle-o\"></i>Well</span>
 								</h3>
-								<div></div>
+								<div class=\"Well-Img\"></div>
 								";
                         
 					}
