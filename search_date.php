@@ -31,30 +31,34 @@ if (!$result){
             do {
 					if($row["pState"])//劣品
 					{
+                        $DefPos=$row["pState"];
                             echo "
                                 <h3>
 								<span class=\"ProductNum\">".$row["pNum"]."</span>
 								<span class=\"Date\">".substr($row["pDate"] ,0 ,16)."</span>
-								<span class=\"Def-Icon Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect</span>
+								<span class=\"Def-Icon Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect ".$DefPos."</span>
 								</h3>
 								<div class=\"Def-Img\">
                                     <div class=\"Def-Chess\">
-                                    <div class=\"pure-g\">
-                                        <div class=\"pure-u-1-3\"></div>
-                                        <div class=\"pure-u-1-3 Def-Position\"></div>
-                                        <div class=\"pure-u-1-3\"></div>
-                                    </div>                                
-                                    <div class=\"pure-g\">
-                                        <div class=\"pure-u-1-3\"></div>
-                                        <div class=\"pure-u-1-3\"></div>
-                                        <div class=\"pure-u-1-3\"></div>
-                                    </div>                                
-                                    <div class=\"pure-g\">
-                                        <div class=\"pure-u-1-3\"></div>
-                                        <div class=\"pure-u-1-3\"></div>
-                                        <div class=\"pure-u-1-3\"></div>
-                                    </div>
-                                
+                                ";
+                                        for($i=1;$i<=9;$i++)
+                                        {
+                                            if($i%3==1){
+                                                echo "<div class=\"pure-g\">";
+                                            }
+                                            
+                                           if($i==$DefPos){
+                                            echo "<div class=\"pure-u-1-3 Def-Position\"></div>";
+                                           }
+                                           if($i!=$DefPos){
+                                                echo "<div class=\"pure-u-1-3\"></div>";
+                                           }
+                                            
+                                            if($i%3==0){
+                                                echo "</div>";
+                                            }
+                                        }
+                                echo"
                                 </div>
 								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
 								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\">
