@@ -90,7 +90,7 @@ if(!isset($_SESSION["if_login"])){
                 <p>
                     <img id="qrcode" src="./img/app.jpg" alt="">
                     <span>
-                        瑕疵監測系統APP 
+                        瑕疵監測系統APP
                     </span>
 
                 </p>

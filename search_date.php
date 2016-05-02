@@ -38,6 +38,24 @@ if (!$result){
 								<span class=\"Def-Icon Defect\"><i class=\"fa fa-times-circle-o\"></i>Defect</span>
 								</h3>
 								<div class=\"Def-Img\">
+                                    <div class=\"Def-Chess\">
+                                    <div class=\"pure-g\">
+                                        <div class=\"pure-u-1-3\"></div>
+                                        <div class=\"pure-u-1-3 Def-Position\"></div>
+                                        <div class=\"pure-u-1-3\"></div>
+                                    </div>                                
+                                    <div class=\"pure-g\">
+                                        <div class=\"pure-u-1-3\"></div>
+                                        <div class=\"pure-u-1-3\"></div>
+                                        <div class=\"pure-u-1-3\"></div>
+                                    </div>                                
+                                    <div class=\"pure-g\">
+                                        <div class=\"pure-u-1-3\"></div>
+                                        <div class=\"pure-u-1-3\"></div>
+                                        <div class=\"pure-u-1-3\"></div>
+                                    </div>
+                                
+                                </div>
 								<a href=\"./img/".$row["pNum"].".bmp\" target=\"_blank\">
 								<img src=\"./img/".$row["pNum"].".bmp\" alt=\"\">
 								</a>
