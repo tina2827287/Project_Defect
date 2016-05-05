@@ -41,20 +41,20 @@ if (!$result){
 								<div class=\"Def-Img\">
                                     <div class=\"Def-Chess\">
                                 ";
-                                        for($i=1;$i<=9;$i++)
+                                        for($i=1;$i<=16;$i++)
                                         {
-                                            if($i%3==1){
+                                            if($i%4==1){
                                                 echo "<div class=\"pure-g\">";
                                             }
                                             
                                            if($i==$DefPos){
-                                            echo "<div class=\"pure-u-1-3 Def-Position\"></div>";
+                                            echo "<div class=\"pure-u-1-4 Def-Position\"></div>";
                                            }
                                            if($i!=$DefPos){
-                                                echo "<div class=\"pure-u-1-3\"></div>";
+                                                echo "<div class=\"pure-u-1-4\"></div>";
                                            }
                                             
-                                            if($i%3==0){
+                                            if($i%4==0){
                                                 echo "</div>";
                                             }
                                         }
