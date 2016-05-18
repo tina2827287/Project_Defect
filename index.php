@@ -5,6 +5,7 @@ if(!isset($_SESSION["if_login"])){
     echo '<meta http-equiv=REFRESH CONTENT=0;url="./login.html">';
     exit;
 }
+
 ?>
 
 
@@ -55,7 +56,9 @@ if(!isset($_SESSION["if_login"])){
         </nav>
         <div class="wrapper">
             <ul id="content">
+
                 <div class="toolform">
+
                     <form id="formprint" action="printday.php" method="post" target="_blank">
                         <p>
                             <input id="printd" name="printd" type="hidden">
@@ -69,6 +72,7 @@ if(!isset($_SESSION["if_login"])){
                         </p>
                     </form>
                 </div>
+                <div class="todayTotal"><span id="todayTotal"></span></div>
                 <li id="content-head">
                     <span>編號</span>
                     <span>日期</span>
@@ -103,6 +107,7 @@ if(!isset($_SESSION["if_login"])){
     <script src="./js/jquery-2.2.2.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/jquery.scrollTo-min.js"></script>
+    <script src="./js/search_todaynum.js"></script>
     <script src="./js/search_date.js"></script>
     <script src="./js/index.js"></script>
 

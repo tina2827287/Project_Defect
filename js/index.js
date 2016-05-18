@@ -17,14 +17,15 @@ $(document).ready(function () {
     getdate = Now;
 
     $('#date').val(getdate);
-
-
+    var destnum = 'search_todaynum.php';
+    getTotal(getdate, destnum);
 
     var StartID = globalStartID;
     var endID = $('#endID').val();
     var dest = 'search_date.php';
 
-    //console.log(globalStartID, endID);
+    console.log(getdate);
+
 
     getData(getdate, StartID, endID, dest, '', 'default');
 
@@ -73,10 +74,11 @@ $(document).ready(function () {
             console.log(endID, globalStartID);
 
             $('.accro').empty();
-
+            var destnum = 'search_todaynum.php'
+            getTotal(getdate, destnum);
             var dest = 'search_date.php';
-
             getData(getdate, StartID, endID, dest, '', 'default');
+
             globalStartID += 10;
 
         }

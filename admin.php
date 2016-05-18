@@ -52,7 +52,7 @@ if(!isset($_SESSION["if_login"])){
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>瑕疵查詢</title>
+        <title>瑕疵查詢 - 後台管理</title>
         <link rel="stylesheet" href="./css/pure-min.css">
         <link rel="stylesheet" href="./css/frame.css">
         <link rel="stylesheet" href="./css/admin.css">
@@ -62,7 +62,7 @@ if(!isset($_SESSION["if_login"])){
 
     <body>
         <header>
-            <h1>Defect Search Admin</h1>
+            <h1>瑕疵查詢系統 - 後台管理</h1>
         </header>
         <div class="wrapper">
             <ul id="content">

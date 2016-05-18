@@ -4,7 +4,7 @@ include("./mysql_connect.php");
 $date=$_POST["chartd"];
 
 $query = "SELECT * FROM productinfo WHERE date(pDate)='$date'";
-$query_def ="SELECT * FROM productinfo WHERE date(pDate)='$date' AND pState=1";
+$query_def ="SELECT * FROM productinfo WHERE date(pDate)='$date' AND pState!=0";
 
 $result = mysqli_query($link, $query);
 $result_def = mysqli_query($link, $query_def);

@@ -18,6 +18,7 @@
 .ui-datepicker-header {
     background-color: rgba(39, 90, 145, 1);
     padding: 15px;
+    color: #fc2;
 }
 
 .ui-datepicker-prev {
@@ -25,6 +26,11 @@
     position: absolute;
     left: 15px;
     cursor: pointer;
+}
+
+thead {
+    background-color: #fc2;
+    color: rgba(39, 90, 145, 1);
 }
 
 .ui-datepicker-next {

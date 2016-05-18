@@ -332,11 +332,33 @@ ul#content {
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
-    text-align: right;
     padding: 2px 15px;
+    text-align: right;
     color: #258;
     background-color: #fc2;
     border-radius: 5px;
+}
+
+
+/*today Total : 今日總產量*/
+
+.todayTotal {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid rgba(238, 238, 238, 0.5);
+}
+
+span#todayTotal {
+    display: inline-block;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-weight: 700;
 }
 
 ul#content form {
@@ -350,6 +372,7 @@ ul#content form {
 
 ul#content form>p {
     display: inline-block;
+    position: relative;
     padding: 5px 5px;
     margin: 0;
     box-sizing: border-box;
@@ -382,7 +405,6 @@ ul#content form > p button {
     display: inline-block;
     box-sizing: border-box;
     border: 0;
-    text-align: right;
     font-size: 0.9em;
     color: #fc2;
     background-color: #258;
